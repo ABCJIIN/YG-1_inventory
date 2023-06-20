@@ -5,18 +5,64 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YG-1 inventory Login</title>
+    <!-- jquery cdn -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- 로컬 소스 -->
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/font.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
 </head>
 <body>
-    <div id="wrapper">
-        <div id="wrap">
-            <section id="login">
-                <div class="title"></div>
-                <div></div>
-                <div class="copyright">
-                    <p>COPYRIGHT (C) 2023 YG1. ALL RIGHT RESERVED.</p>
-                </div>
-            </section>
-        </div>
-    </div>
+    <div id="container-login">
+		<div id="header">
+            <span class="logolink">
+                <a href="">
+                    <img src="/assets/images/common/logo.png" alt="Logo" id="logo"/>
+                    <strong>INVENTORY<br>INQUIRY</strong>
+                </a>
+          	</span>
+  		</div> <!-- end #header -->
+        <div id="login">
+            <div id="content" class="clearfix">
+                <div class="title"><strong>LOGIN</strong><span>Global Inventory</span></div>
+            	<div id="log-form">
+					<form  name="frm" method="post" action="chk_proc.asp" >
+						<div class="id">
+                            <span>ID</span><input type="text" name="id" value="" id="loginput" placeholder="Type your username"/>
+                        </div>
+                        <div class="password">
+                            <span>PW</span><input type="password" name="pwd"   onkeydown="if(event.keyCode==13) { frmSUB();}" value="" id="loginput" placeholder="Type your password"/>
+                        </div>
+						<img src="images/log-btn.png" id="logsubmit" onclick="frmSUB();" />
+				  	</form>
+			  	</div> <!-- end #search-form -->
+            </div> <!-- end #content-->
+		</div> <!-- end #login-->
+        <div id="content-top-login"></div>
+		<div id="content-login" class="clearfix">
+            <div style="font-weight:bold; color:#F00">CUSTOMER SUPPORT</div>
+            <div>
+                <p>If any problems or inquiry, please send email to Administrator<br>
+				email address : <a href="mailto:marketing@yg1.kr"><b>marketing@yg1.kr</b></a>
+				</p>
+            </div> 
+            <div style="font-weight:bold; color:#F00">FAQ</div>
+            <div>
+                <p>Q1.“This account is being logged in. Please check on your account.” message was popped up. How can I do?<br>
+                A1. You have to wait <b>10 minutes</b> to re-login.               
+				</p>
+				<p>Q2. Then, how can I prevent the problem?<br>
+				A2. <b> DO NOT</b> forget to click the “<b style="color:#F00"> logout</b>” before you close the browser.
+				</p>
+				<p>In case EDP NO is not exist, it is shown as “EDP error!” on the page.<br>
+				In case the stock is not exist, it is shown as “No Stock”
+				</p>
+			</div>
+  		</div> <!-- end #content-->
+		<div id="content-bottom-login"></div>
+		<div id="footer" class="clearfix">
+			<p id="copyright">Copyright (c) 2015 <a href="/">YG1</a>. All right reserved.</p>
+		</div> <!-- end #footer -->
+    </div> <!-- end #container -->	
 </body>
 </html>

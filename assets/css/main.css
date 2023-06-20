@@ -4,12 +4,111 @@
 /* 모바일 */
 * {
   box-sizing: border-box;
+  letter-spacing: -0.02em;
 }
 
 html {
   font-size: 10px;
 }
 
+body {
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+body * {
+  font-weight: 400;
+  color: #222222;
+}
+
 /* 노트북 */
 /* 테블릿 */
 /* 모바일 */
+#container-login {
+  width: 100%;
+  height: 100%;
+  background: url(../../assets/images/main/main_bg.png) no-repeat center/cover;
+}
+#container-login #header {
+  width: calc(100% - 4rem);
+  max-width: 1840px;
+  margin: 0 auto;
+  padding-top: 3.7rem;
+}
+#container-login #header .logolink a {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1.2rem;
+}
+#container-login #header .logolink a img {
+  display: inline-block;
+  width: 9.5rem;
+}
+#container-login #header .logolink a strong {
+  font-family: "Play", sans-serif;
+  font-weight: 700;
+  font-size: 20;
+  letter-spacing: -0.02em;
+  line-height: 2rem;
+  color: #ffffff;
+}
+#container-login #login {
+  width: 100%;
+}
+#container-login #login #content {
+  width: 70.7rem;
+  height: 63.6rem;
+  border-radius: 2rem;
+  background: #ffffff;
+}
+#container-login #login #content .title {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+#container-login #login #content .title strong {
+  font-family: "Play", sans-serif;
+  font-size: 5.2rem;
+  font-weight: 700;
+  color: #222222;
+  letter-spacing: -0.02em;
+  line-height: 6.4rem;
+}
+#container-login #login #content .title span {
+  font-family: "Play", sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #ED1C24;
+  letter-spacing: -0.02em;
+  line-height: 6.4rem;
+}
+#container-login #login #content #log-form form div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+#container-login #login #content #log-form form span {
+  display: block;
+  width: 4rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+  letter-spacing: -0.02em;
+  line-height: 2.4rem;
+  color: #222222;
+}
+#container-login #login #content #log-form form input {
+  height: 3.6rem;
+  border: none;
+  border-bottom: 1px solid #C6C6C6;
+  background: #F8F8F8;
+}
+#container-login #login #content #log-form form input::-moz-placeholder {
+  background: url(../images/icon/id_icon.png) no-repeat 50% 50%;
+}
+#container-login #login #content #log-form form input::placeholder {
+  background: url(../images/icon/id_icon.png) no-repeat 50% 50%;
+}

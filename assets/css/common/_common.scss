@@ -2,6 +2,8 @@
 
 $black: #222222;
 $white: #ffffff;
+$play: 'Play', sans-serif;
+$poppins: 'Poppins', sans-serif;
 
 @mixin border($width, $color) {border: $width solid $color;}
 @mixin flexbox($direction, $justify, $align) {
@@ -31,12 +33,20 @@ $white: #ffffff;
     background-position: #{$x} #{$y};
 } 
 
-*{box-sizing: border-box;}
+*{
+    box-sizing: border-box;
+    letter-spacing: -0.02em;
+}
 
 html {
     font-size: 10px;
 }
 
-// body {
-    
-// }
+body{
+    font-size: 1.6rem;
+    line-height: 1.5;
+    *{
+        font-weight: 400;
+        color: $black;
+    }
+}
