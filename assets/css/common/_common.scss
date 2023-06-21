@@ -2,8 +2,8 @@
 
 $black: #222222;
 $white: #ffffff;
-$play: 'Play', sans-serif;
-$poppins: 'Poppins', sans-serif;
+$play: 'Play';
+$poppins: 'Poppins';
 
 @mixin border($width, $color) {border: $width solid $color;}
 @mixin flexbox($direction, $justify, $align) {
