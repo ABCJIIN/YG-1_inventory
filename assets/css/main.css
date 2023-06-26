@@ -20,6 +20,135 @@ body * {
   color: #222222;
 }
 
+.hide-item {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  -webkit-clip-path: polygon(0 0, 0 0, 0 0);
+          clip-path: polygon(0 0, 0 0, 0 0);
+}
+
+/* 노트북 */
+/* 테블릿 */
+/* 모바일 */
+* {
+  box-sizing: border-box;
+  letter-spacing: -0.02em;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+body * {
+  font-weight: 400;
+  color: #222222;
+}
+
+.hide-item {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  -webkit-clip-path: polygon(0 0, 0 0, 0 0);
+          clip-path: polygon(0 0, 0 0, 0 0);
+}
+
+/* 노트북 */
+/* 테블릿 */
+/* 모바일 */
+#subContainer #header {
+  position: relative;
+  width: 100%;
+  background: white;
+  box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+}
+#subContainer #header .inner {
+  width: calc(100% - 4rem);
+  height: 8rem;
+  max-width: 1840px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+#subContainer #header .inner .logo a {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.2rem;
+}
+#subContainer #header .inner .logo a span {
+  font-family: "Play";
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 2rem;
+}
+#subContainer #header .inner .btn-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2.4rem;
+}
+#subContainer #header .inner .btn-wrap a {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+  height: 3.2rem;
+  border-radius: 0.4rem;
+}
+#subContainer #header .inner .btn-wrap a:first-child {
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  color: #757575;
+}
+#subContainer #header .inner .btn-wrap a:last-child {
+  width: 12rem;
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  color: #ffffff;
+  background: #222222;
+}
+#subContainer #footer {
+  position: relative;
+  width: 100%;
+  background: #DDDDDD;
+}
+#subContainer #footer .inner {
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#subContainer #footer .inner p {
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  color: #AAAAAA;
+}
+#subContainer #footer .inner p a {
+  color: #AAAAAA;
+}
+
 /* 노트북 */
 /* 테블릿 */
 /* 모바일 */
@@ -301,4 +430,255 @@ body * {
 }
 #container #footer p a {
   color: #ffffff;
+}
+
+#subContainer {
+  width: 100%;
+  background: url(../images/common/sub_bg.png) no-repeat center/cover;
+}
+#subContainer #main {
+  position: relative;
+  width: 100%;
+  min-height: calc(100vh - 12rem);
+  height: 100%;
+  overflow: auto;
+}
+#subContainer #main .main-inner {
+  max-width: 1440px;
+  min-width: 1220px;
+  width: calc(100% - 4rem);
+  margin: 0 auto;
+}
+#subContainer #main .main-inner strong {
+  font-family: "Play";
+  font-weight: 700;
+  font-size: 5.2rem;
+  line-height: 6.4rem;
+}
+#subContainer #main .main-inner .search {
+  width: 100%;
+  height: 8rem;
+  background: #ffffff;
+  border-radius: 50rem;
+  box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+  margin-top: 3rem;
+}
+#subContainer #main .main-inner .search .search-inner {
+  width: calc(100% - 4rem);
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#subContainer #main .main-inner .search .search-inner .input-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.8rem;
+  padding-right: 2.4rem;
+}
+#subContainer #main .main-inner .search .search-inner .input-wrap label {
+  font-family: "Poppins";
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 2.4rem;
+}
+#subContainer #main .main-inner .search .search-inner .input-wrap input {
+  width: 20vw;
+  height: 3.55rem;
+  padding: 0 5rem 0 1.6rem;
+  border: none;
+  border-bottom: 1px solid #C6C6C6;
+  background: url(../images/icon/search.png) no-repeat calc(100% - 1.6rem) 50%/2.4rem 2.4rem #F8F8F8;
+}
+#subContainer #main .main-inner .search .search-inner .input-wrap input::-moz-placeholder {
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  color: #C6C6C6;
+}
+#subContainer #main .main-inner .search .search-inner .input-wrap input::placeholder {
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  color: #C6C6C6;
+}
+#subContainer #main .main-inner .search .search-inner > .btn-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.8rem;
+  padding-right: 4.2vw;
+}
+#subContainer #main .main-inner .search .search-inner > .btn-wrap button {
+  width: 12rem;
+  height: 3.2rem;
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  border-radius: 0.4rem;
+}
+#subContainer #main .main-inner .search .search-inner > .btn-wrap button.inquiry {
+  background: #222222;
+  color: #ffffff;
+}
+#subContainer #main .main-inner .search .search-inner > .btn-wrap button.multi {
+  background: #ffffff;
+  border: 1px solid #707070;
+}
+#subContainer #main .main-inner .search .search-inner > .btn-wrap .multi-wrap {
+  position: relative;
+}
+#subContainer #main .main-inner .search .search-inner > .btn-wrap .multi-wrap .multi-contents {
+  position: absolute;
+  top: 4.1rem;
+  left: 0;
+  width: 58.6rem;
+  border-radius: 0.4rem;
+  border: 1px solid #DDDDDD;
+  background: #ffffff;
+  display: none;
+}
+#subContainer #main .main-inner .search .search-inner > .btn-wrap .multi-wrap .multi-contents .inner {
+  padding: 2rem 2.4rem 2.3rem;
+}
+#subContainer #main .main-inner .search .search-inner > .btn-wrap .multi-wrap .multi-contents .inner > span {
+  font-family: "Play";
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 2.4rem;
+}
+#subContainer #main .main-inner .search .search-inner > .btn-wrap .multi-wrap .multi-contents .inner .tag-wrap {
+  width: 100%;
+  padding: 3.1rem 0 1.6rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+#subContainer #main .main-inner .search .search-inner > .btn-wrap .multi-wrap .multi-contents .inner .tag-wrap div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.8rem;
+  height: 3.1rem;
+  padding: 0 1.6rem;
+  background: #DDDDDD;
+  border-radius: 50rem;
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2rem;
+}
+#subContainer #main .main-inner .search .search-inner > .btn-wrap .multi-wrap .multi-contents .inner .tag-wrap div .tag-close {
+  width: 1.6rem;
+  height: 1.6rem;
+  background: url(../images/icon/tag_close.png) no-repeat center/contain;
+}
+#subContainer #main .main-inner .search .search-inner > .btn-wrap .multi-wrap .multi-contents .inner textarea {
+  width: 100%;
+  height: 14rem;
+  padding: 1.2rem 1.6rem;
+  background: #F8F8F8;
+  border: none;
+  border-bottom: 1px solid #DDDDDD;
+  resize: none;
+}
+#subContainer #main .main-inner .search .search-inner > .btn-wrap .multi-wrap .multi-contents .inner textarea::-moz-placeholder {
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  color: #C6C6C6;
+}
+#subContainer #main .main-inner .search .search-inner > .btn-wrap .multi-wrap .multi-contents .inner textarea::placeholder {
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  color: #C6C6C6;
+}
+#subContainer #main .main-inner .search .search-inner > .btn-wrap .multi-wrap .multi-contents .inner .btn-wrap {
+  width: 100%;
+  padding-top: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1.6rem;
+}
+#subContainer #main .main-inner .search .search-inner > .btn-wrap .multi-wrap .multi-contents .inner .btn-wrap button {
+  width: 14rem;
+  height: 3.2rem;
+  border-radius: 0.4rem;
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2rem;
+}
+#subContainer #main .main-inner .search .search-inner > .btn-wrap .multi-wrap .multi-contents .inner .btn-wrap button.multi-done {
+  border: 1px solid #707070;
+  background: #ffffff;
+}
+#subContainer #main .main-inner .search .search-inner > .btn-wrap .multi-wrap .multi-contents .inner .btn-wrap button.multi-search {
+  border: none;
+  background: #222222;
+  color: white;
+}
+#subContainer #main .main-inner .search .search-inner .ckbox-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+#subContainer #main .main-inner .search .search-inner .ckbox-wrap > span {
+  font-family: "Poppins";
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 3rem;
+}
+#subContainer #main .main-inner .search .search-inner .ckbox-wrap div {
+  padding-left: 1.2rem;
+}
+#subContainer #main .main-inner .search .search-inner .ckbox-wrap div input {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+#subContainer #main .main-inner .search .search-inner .ckbox-wrap div input:checked + label::before {
+  background: url(../images/icon/search_checked.png) no-repeat center/contain;
+  border: none;
+}
+#subContainer #main .main-inner .search .search-inner .ckbox-wrap div label {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+}
+#subContainer #main .main-inner .search .search-inner .ckbox-wrap div label::before {
+  display: inline-block;
+  content: "";
+  box-sizing: border-box;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 0.4rem;
+  border: 1px solid #CCCCCC;
+  background: #FDFDFD;
 }

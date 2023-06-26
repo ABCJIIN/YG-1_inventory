@@ -3,23 +3,466 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>global_inventory</title>
+	<!-- jquery cdn -->
+	<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <!-- 로컬 소스 -->
+	<link rel="stylesheet" href="../assets/css/reset.css">
+	<link rel="stylesheet" href="../assets/css/font.css">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<script src="../assets/js/main.js"></script>
 </head>
 <body>
-    <div id="#container">
+    <div id="subContainer">
         <div id="header"></div>
         <section id="main">
             <div class="main-inner">
                 <strong>Please search for the EDP No.</strong>
                 <div class="search">
-                    <div class="input-wrap">
-                        <label for="edpNo">EDP No.</label>
-                        <input type="search" id="edpNo" placeholder="Search EDP Number">
-                    </div>
-                    <div class="btn-wrap">
-                        <button></button>
-                    </div>
+					<div class="search-inner">
+						<div class="input-wrap">
+							<label for="edpNo">EDP No.</label>
+							<input type="search" id="edpNo" placeholder="Search EDP Number">
+						</div>
+						<div class="btn-wrap">
+							<button class="inquiry" type="button">Inquiry</button>
+							<div class="multi-wrap">
+								<button class="multi" type="button">Multi search</button>
+								<div class="multi-contents">
+									<div class="inner">
+										<span>Multi search</span>
+										<div class="tag-wrap">
+											<div>CDRA04020<button class="tag-close" type="button"></button></div>
+											<div>DGN508003G<button class="tag-close" type="button"></button></div>
+											<div>D1GP101014K<button class="tag-close" type="button"></button></div>
+										</div>
+										<textarea placeholder="EDP No. Delimiter “Enter”"></textarea>
+										<div class="btn-wrap">
+											<button class="multi-done" type="button">Done</button>
+											<button class="multi-search" type="button">Search</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="ckbox-wrap">
+							<span>Area:</span>
+							<div class="hq-wrap">
+								<input id="hq" name="hq" type="checkbox" checked>
+								<label for="hq">HQ</label>
+							</div>
+							<div class="europe-wrap">
+								<input id="europe" name="europe" type="checkbox">
+								<label for="europe">Europe</label>
+							</div>
+							<div class="america-wrap">
+								<input id="america" name="america" type="checkbox">
+								<label for="america">America</label>
+							</div>
+							<div class="asia-wrap">
+								<input id="asia" name="asia" type="checkbox">
+								<label for="asia">Aisa</label>
+							</div>
+							<div class="china-wrap">
+								<input id="china" name="china" type="checkbox">
+								<label for="china">China</label>
+							</div>
+						</div>
+					</div>
                 </div>
+				<div class="result">
+					<div class="btn-wrap">
+						<button class="stock-btn" type="button"><img src="../assets/images/icon/stock_upload.png" alt="stock upload">Stock Upload</button>
+						<button class="excel-btn" type="button"><img src="../assets/images/icon/excel_download.png" alt="excel download">Excel Download</button>
+					</div>
+					<div class="table-wrap">
+						<table class="tb-header">
+							<caption class="hide-item">리스트</caption>
+							<colgroup>
+								<col width="10%"/>
+								<col width="10%"/>
+								<col width="28%"/>
+								<col width="10%"/>
+								<col width="6%"/>
+								<col width="6%"/>
+								<col width="10%"/>
+								<col width="10%"/>
+								<col width="10%"/>
+							</colgroup>
+							<thead>
+								<tr>
+									<th>Brand</th>
+									<th>EDP No.</th>
+									<th>Description</th>
+									<th>Dimension</th>
+									<th>Stock</th>
+									<th>Unit</th>
+									<th>~ 14 Day</th>
+									<th>~ 30 Day</th>
+									<th>~ 60 Day</th>
+								</tr>
+							</thead>
+						</table>
+						<div class="tb-body-wrap">
+							<table class="tb-body">
+								<caption class="hide-item">리스트</caption>
+								<colgroup>
+									<col width="10%"/>
+									<col width="10%"/>
+									<col width="28%"/>
+									<col width="10%"/>
+									<col width="6%"/>
+									<col width="6%"/>
+									<col width="10%"/>
+									<col width="10%"/>
+									<col width="10%"/>
+								</colgroup>
+								<tbody>
+									<tr>
+										<td>NEUTRAL</td>
+										<td>CDRA04020</td>
+										<td>MULTI-1 DRILL JOBBER(TIALN)</td>
+										<td>2X3X24X56</td>
+										<td>2</td>
+										<td>PC</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>NEUTRAL</td>
+										<td>CDRA04020</td>
+										<td>MULTI-1 DRILL JOBBER(TIALN)</td>
+										<td>2X3X24X56</td>
+										<td>19</td>
+										<td>PC</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>NEUTRAL</td>
+										<td>CDRA04020</td>
+										<td>MULTI-1 DRILL JOBBER(TIALN)</td>
+										<td>2X3X24X56</td>
+										<td>1</td>
+										<td>PC</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>NEUTRAL</td>
+										<td>CDRA04020</td>
+										<td>MULTI-1 DRILL JOBBER(TIALN)</td>
+										<td>2X3X24X56</td>
+										<td>19</td>
+										<td>PC</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>NEUTRAL</td>
+										<td>CDRA04020</td>
+										<td>MULTI-1 DRILL JOBBER(TIALN)</td>
+										<td>2X3X24X56</td>
+										<td>19</td>
+										<td>PC</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>NEUTRAL</td>
+										<td>CDRA04020</td>
+										<td>MULTI-1 DRILL JOBBER(TIALN)</td>
+										<td>2X3X24X56</td>
+										<td>19</td>
+										<td>PC</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>NEUTRAL</td>
+										<td>CDRA04020</td>
+										<td>MULTI-1 DRILL JOBBER(TIALN)</td>
+										<td>2X3X24X56</td>
+										<td>19</td>
+										<td>PC</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>NEUTRAL</td>
+										<td>CDRA04020</td>
+										<td>MULTI-1 DRILL JOBBER(TIALN)</td>
+										<td>2X3X24X56</td>
+										<td>19</td>
+										<td>PC</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>NEUTRAL</td>
+										<td>CDRA04020</td>
+										<td>MULTI-1 DRILL JOBBER(TIALN)</td>
+										<td>2X3X24X56</td>
+										<td>19</td>
+										<td>PC</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>NEUTRAL</td>
+										<td>CDRA04020</td>
+										<td>MULTI-1 DRILL JOBBER(TIALN)</td>
+										<td>2X3X24X56</td>
+										<td>19</td>
+										<td>PC</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>NEUTRAL</td>
+										<td>CDRA04020</td>
+										<td>MULTI-1 DRILL JOBBER(TIALN)</td>
+										<td>2X3X24X56</td>
+										<td>19</td>
+										<td>PC</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>NEUTRAL</td>
+										<td>CDRA04020</td>
+										<td>MULTI-1 DRILL JOBBER(TIALN)</td>
+										<td>2X3X24X56</td>
+										<td>19</td>
+										<td>PC</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>NEUTRAL</td>
+										<td>CDRA04020</td>
+										<td>MULTI-1 DRILL JOBBER(TIALN)</td>
+										<td>2X3X24X56</td>
+										<td>19</td>
+										<td>PC</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>NEUTRAL</td>
+										<td>CDRA04020</td>
+										<td>MULTI-1 DRILL JOBBER(TIALN)</td>
+										<td>2X3X24X56</td>
+										<td>19</td>
+										<td>PC</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<!-- <div class="table-wrap">
+						<table>
+							<caption class="hide-item">리스트</caption>
+							<colgroup>
+								<col width="10%"/>
+								<col width="10%"/>
+								<col width="28%"/>
+								<col width="10%"/>
+								<col width="6%"/>
+								<col width="6%"/>
+								<col width="10%"/>
+								<col width="10%"/>
+								<col width="10%"/>
+							</colgroup>
+							<thead>
+								<tr>
+									<th>Brand</th>
+									<th>EDP No.</th>
+									<th>Description</th>
+									<th>Dimension</th>
+									<th>Stock</th>
+									<th>Unit</th>
+									<th>~ 14 Day</th>
+									<th>~ 30 Day</th>
+									<th>~ 60 Day</th>
+								</tr>
+								<tr></tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>NEUTRAL</td>
+									<td>CDRA04020</td>
+									<td>MULTI-1 DRILL JOBBER(TIALN)</td>
+									<td>2X3X24X56</td>
+									<td>2</td>
+									<td>PC</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+								</tr>
+								<tr>
+									<td>NEUTRAL</td>
+									<td>CDRA04020</td>
+									<td>MULTI-1 DRILL JOBBER(TIALN)</td>
+									<td>2X3X24X56</td>
+									<td>19</td>
+									<td>PC</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+								</tr>
+								<tr>
+									<td>NEUTRAL</td>
+									<td>CDRA04020</td>
+									<td>MULTI-1 DRILL JOBBER(TIALN)</td>
+									<td>2X3X24X56</td>
+									<td>1</td>
+									<td>PC</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+								</tr>
+								<tr>
+									<td>NEUTRAL</td>
+									<td>CDRA04020</td>
+									<td>MULTI-1 DRILL JOBBER(TIALN)</td>
+									<td>2X3X24X56</td>
+									<td>19</td>
+									<td>PC</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+								</tr>
+								<tr>
+									<td>NEUTRAL</td>
+									<td>CDRA04020</td>
+									<td>MULTI-1 DRILL JOBBER(TIALN)</td>
+									<td>2X3X24X56</td>
+									<td>19</td>
+									<td>PC</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+								</tr>
+								<tr>
+									<td>NEUTRAL</td>
+									<td>CDRA04020</td>
+									<td>MULTI-1 DRILL JOBBER(TIALN)</td>
+									<td>2X3X24X56</td>
+									<td>19</td>
+									<td>PC</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+								</tr>
+								<tr>
+									<td>NEUTRAL</td>
+									<td>CDRA04020</td>
+									<td>MULTI-1 DRILL JOBBER(TIALN)</td>
+									<td>2X3X24X56</td>
+									<td>19</td>
+									<td>PC</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+								</tr>
+								<tr>
+									<td>NEUTRAL</td>
+									<td>CDRA04020</td>
+									<td>MULTI-1 DRILL JOBBER(TIALN)</td>
+									<td>2X3X24X56</td>
+									<td>19</td>
+									<td>PC</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+								</tr>
+								<tr>
+									<td>NEUTRAL</td>
+									<td>CDRA04020</td>
+									<td>MULTI-1 DRILL JOBBER(TIALN)</td>
+									<td>2X3X24X56</td>
+									<td>19</td>
+									<td>PC</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+								</tr>
+								<tr>
+									<td>NEUTRAL</td>
+									<td>CDRA04020</td>
+									<td>MULTI-1 DRILL JOBBER(TIALN)</td>
+									<td>2X3X24X56</td>
+									<td>19</td>
+									<td>PC</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+								</tr>
+								<tr>
+									<td>NEUTRAL</td>
+									<td>CDRA04020</td>
+									<td>MULTI-1 DRILL JOBBER(TIALN)</td>
+									<td>2X3X24X56</td>
+									<td>19</td>
+									<td>PC</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+								</tr>
+								<tr>
+									<td>NEUTRAL</td>
+									<td>CDRA04020</td>
+									<td>MULTI-1 DRILL JOBBER(TIALN)</td>
+									<td>2X3X24X56</td>
+									<td>19</td>
+									<td>PC</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+								</tr>
+								<tr>
+									<td>NEUTRAL</td>
+									<td>CDRA04020</td>
+									<td>MULTI-1 DRILL JOBBER(TIALN)</td>
+									<td>2X3X24X56</td>
+									<td>19</td>
+									<td>PC</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+								</tr>
+								<tr>
+									<td>NEUTRAL</td>
+									<td>CDRA04020</td>
+									<td>MULTI-1 DRILL JOBBER(TIALN)</td>
+									<td>2X3X24X56</td>
+									<td>19</td>
+									<td>PC</td>
+									<td>0</td>
+									<td>0</td>
+									<td>0</td>
+								</tr>
+							</tbody>
+						</table>
+					</div> -->
+				</div>
             </div>
         </section>
         <div id="footer"></div>
