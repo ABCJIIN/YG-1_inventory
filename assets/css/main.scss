@@ -2,6 +2,7 @@
 @import "./common/layout";
 @import "./common/responsive";
 
+//login 페이지
 #container {
     width: 100%;
     background: url(../images/main/main_bg.png) no-repeat center/cover;
@@ -248,6 +249,367 @@
             a {
                 color: $white;
             }
+        }
+    }
+}
+
+#subContainer {
+    width: 100%;
+    background: url(../images/common/sub_bg.png) no-repeat center/cover;
+    // overflow: auto;
+    #main {
+        position: relative;
+        width: 100%;
+        min-height: calc(100vh - 12rem);
+        height: 100%;
+        overflow: auto;
+        // overflow: hidden;
+        .main-inner {
+            max-width: 1440px;
+            min-width: 1220px;
+            width: calc(100% - 4rem);
+            // width: 1440px;
+            margin: 0 auto;
+            strong {
+                font-family: $play;
+                font-weight: 700;
+                font-size: 5.2rem;
+                line-height: 6.4rem;
+            }
+            .search {
+                width: 100%;
+                height: 8rem;
+                background: $white;
+                border-radius: 50rem;
+                box-shadow: 0 10px 10px -5px rgba(0 ,0 ,0 ,0.1);
+                margin-top: 3rem;
+                .search-inner {
+                    width: calc(100% - 4rem);
+                    margin: 0 auto;
+                    height: 100%;
+                    @include flexbox(row, center, center);
+                    .input-wrap {
+                        @include flexbox(row, flex-start, center);
+                        gap: 0.8rem;
+                        padding-right: 2.4rem;
+                        label {
+                            font-family: $poppins;
+                            font-weight: 600;
+                            font-size: 2rem;
+                            line-height: 2.4rem;
+                        }
+                        input {
+                            // width: 38.5rem;
+                            width: 20vw;
+                            height: 3.55rem;
+                            padding: 0 5rem 0 1.6rem;
+                            border: none;
+                            border-bottom: 1px solid #C6C6C6;
+                            background: url(../images/icon/search.png) no-repeat calc(100% - 1.6rem) 50%/2.4rem 2.4rem #F8F8F8;
+                            &::placeholder {
+                                font-family: $poppins;
+                                font-weight: 400;
+                                font-size: 1.6rem;
+                                line-height: 2.4rem;
+                                color: #C6C6C6;
+                            }
+                        }
+                    }
+                    > .btn-wrap {
+                        @include flexbox (row, flex-start, center);
+                        gap: 0.8rem;
+                        // padding-right: 8rem;
+                        padding-right: 4.2vw;
+                        button {
+                            width: 12rem;
+                            height: 3.2rem;
+                            font-family: $poppins;
+                            font-weight: 400;
+                            font-size: 1.4rem;
+                            line-height: 2rem;
+                            border-radius: 0.4rem;
+                            &.inquiry {
+                                background: $black;
+                                color: $white;
+                            }
+                            &.multi {
+                                background: $white;
+                                border: 1px solid #707070;
+                            }
+                        }
+                        .multi-wrap {
+                            position: relative;
+                            .multi-contents {
+                                position: absolute;
+                                top: 4.1rem;
+                                left: 0;
+                                width: 58.6rem;
+                                // height: 34.2rem;
+                                border-radius: 0.4rem;
+                                border: 1px solid #DDDDDD;
+                                background: $white;
+                                display: none;
+                                .inner {
+                                    padding: 2rem 2.4rem 2.3rem;
+                                    > span {
+                                        font-family: $play;
+                                        font-weight: 700;
+                                        font-size: 2.4rem;
+                                        line-height: 2.4rem;
+                                    }
+                                    .tag-wrap {
+                                        width: 100%;
+                                        padding: 3.1rem 0 1.6rem;
+                                        @include flexbox(row, flex-start, center);
+                                        flex-wrap: wrap;
+                                        gap: 0.8rem;
+                                        div {
+                                            @include flexbox(row, space-between, center);
+                                            gap: 0.8rem;
+                                            height: 3.1rem;
+                                            padding: 0 1.6rem;
+                                            background: #DDDDDD;
+                                            border-radius: 50rem;
+                                            font-family: $poppins;
+                                            font-weight: 400;
+                                            font-size: 1.6rem;
+                                            line-height: 2rem;
+                                            .tag-close {
+                                                width: 1.6rem;
+                                                height: 1.6rem;
+                                                background: url(../images/icon/tag_close.png) no-repeat center/contain;
+                                            }
+                                        }
+                                    }
+                                    textarea {
+                                        width: 100%;
+                                        height: 14rem;
+                                        padding: 1.2rem 1.6rem;
+                                        background: #F8F8F8;
+                                        border: none;
+                                        border-bottom: 1px solid #DDDDDD;
+                                        resize: none;
+                                        &::placeholder {
+                                            font-family: $poppins;
+                                            font-weight: 400;
+                                            font-size: 1.6rem;
+                                            line-height: 2.4rem;
+                                            color: #C6C6C6;
+                                        }
+                                    }
+                                    .btn-wrap {
+                                        width: 100%;
+                                        padding-top: 1.5rem;
+                                        @include flexbox(row, flex-end, center);
+                                        gap: 1.6rem;
+                                        button {
+                                            width: 14rem;
+                                            height: 3.2rem;
+                                            border-radius: 0.4rem;
+                                            font-family: $poppins;
+                                            font-weight: 400;
+                                            font-size: 1.4rem;
+                                            line-height: 2rem;
+                                            &.multi-done {
+                                                border: 1px solid #707070;
+                                                background: $white;
+                                            }
+                                            &.multi-search {
+                                                border: none;
+                                                background: $black;
+                                                color: white;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .ckbox-wrap {
+                        @include flexbox(row, flex-start, center);
+                        > span {
+                            font-family: $poppins;
+                            font-weight: 600;
+                            font-size: 2rem;
+                            line-height: 3rem;
+                        }
+                        div {
+                            padding-left: 1.2rem;
+                            input {
+                                position: absolute;
+                                clip: rect(0 0 0 0);
+                                width: 1px;
+                                height: 1px;
+                                overflow: hidden;
+                                &:checked+label::before {
+                                    background: url(../images/icon/search_checked.png)no-repeat center/contain;
+                                    border: none;
+                                }
+                            }
+                            label {
+                                @include flexbox(row, flex-start, center);
+                                gap: 0.5rem;
+                                font-family: $poppins;
+                                font-weight: 400;
+                                font-size: 1.6rem;
+                                line-height: 2.4rem;
+                                &::before {
+                                    display: inline-block;
+                                    content: '';
+                                    box-sizing: border-box;
+                                    width: 2.4rem;
+                                    height: 2.4rem;
+                                    border-radius: 0.4rem;
+                                    border: 1px solid #CCCCCC;
+                                    background: #FDFDFD;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            // .result {
+            //     width: 100%;
+            //     // width: 100vw;
+            //     .btn-wrap {
+            //         @include flexbox(row, flex-end, center);
+            //         gap: 1.6rem;
+            //         button {
+            //             height: 4rem;
+            //             border-radius: 0.4rem;
+            //             @include flexbox(row, center, center);
+            //             gap: 0.8rem;
+            //             &.stock-btn {
+            //                 width: 16.1rem;
+            //                 background: $black;
+            //                 color: $white;
+            //                 border: none;
+            //                 img {
+            //                     width: 2.4rem;
+            //                 }
+            //             }
+            //             &.excel-btn {
+            //                 width: 18.2rem;
+            //                 background: $white;
+            //                 border: 1px solid $black;
+            //                 img {
+            //                     width: 2.4rem;
+            //                 }
+            //             }
+            //         }
+            //     }
+            //     .table-wrap {
+            //         width:100vw;
+            //         // overflow-x: scroll;
+            //         overflow: auto;
+            //         .tb-header {
+            //             // width: 100vw;
+            //             width: 1422px;
+            //             // width: 1422px;
+            //             margin-bottom: 2rem;
+            //             thead {
+            //                 tr {
+            //                     height: 4.8rem;
+            //                     background: $black;
+            //                     th {
+            //                         vertical-align: middle;
+            //                         color: $white;
+            //                     }
+            //                 }
+            //             }
+            //         }
+            //         .tb-body-wrap {
+            //             width: 1422px;
+            //             max-height: 420px;
+            //             overflow-y: scroll;
+            //             overflow-x: hidden;
+            //             .tb-body {
+            //                 width: 100%;
+            //                 width: 1422px;
+            //                 tbody {
+            //                     tr {
+            //                         height: 4.2rem;
+            //                         background: rgba(255,255,255,0.7);
+            //                         th {
+            //                             vertical-align: middle;
+            //                         }
+            //                     }
+            //                 }
+            //             }
+            //         }
+            //     }
+            //     // .table-wrap {
+            //     //     width: 100%;
+            //     //     max-height: 469px;
+            //     //     &::-webkit-scrollbar {
+            //     //         width: 1.2rem;
+            //     //     }
+            //     //     &::-webkit-scrollbar-thumb {
+            //     //         background: #CCCCCC;
+            //     //         border-radius: 50rem;
+            //     //     }
+            //     //     &::-webkit-scrollbar-track {
+            //     //         background: $white;
+            //     //     }
+            //     //     table {
+            //     //         width: 100%;
+            //     //         // border-collapse: separate;
+            //     //         // border-spacing: 0;
+            //     //         thead {
+            //     //             width: 100%;
+            //     //             height: 4.8rem;
+            //     //             background: $black;
+            //     //             position: sticky;
+            //     //             top: 0;
+            //     //             tr {
+            //     //                 &:first-child {
+            //     //                     th {
+            //     //                         vertical-align: middle;
+            //     //                         font-family: $poppins;
+            //     //                         font-weight: 600;
+            //     //                         font-size: 1.6rem;
+            //     //                         line-height: 2rem;
+            //     //                         color: $white;
+            //     //                         &:not(:last-child) {
+            //     //                             border-right: 1px solid $white;
+            //     //                         }
+            //     //                     }
+            //     //                 }
+            //     //                 &:last-child {
+            //     //                     width: 100%;
+            //     //                     height: 0.8rem;
+            //     //                     background: transparent;
+            //     //                 }
+            //     //             }
+            //     //         }
+            //     //         tbody {
+            //     //             width: 100%;
+            //     //             tr {
+            //     //                 height: 4.2rem;
+            //     //                 background: rgba(255,255,255, 0.7);
+            //     //                 td {
+            //     //                     vertical-align: middle;
+            //     //                     padding: 0 1.7rem;
+            //     //                     border: 1px solid #DDDDDD;
+            //     //                     font-family: $poppins;
+            //     //                     font-weight: 400;
+            //     //                     font-size: 1.6rem;
+            //     //                     line-height: 2rem;
+            //     //                     &:nth-of-type(1),&:nth-of-type(2),&:nth-of-type(4),&:nth-of-type(6) {
+            //     //                         text-align: center;
+            //     //                     }
+            //     //                     &:nth-of-type(3) {
+            //     //                         text-align: left;
+            //     //                     }
+            //     //                     &:nth-of-type(5),&:nth-of-type(7),&:nth-of-type(8),&:nth-of-type(9) {
+            //     //                         text-align: right;
+            //     //                     }
+            //     //                 }
+            //     //             }
+            //     //         }
+            //     //     }
+            //     // }
+            // }
         }
     }
 }
