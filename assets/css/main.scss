@@ -255,20 +255,17 @@
 
 #subContainer {
     width: 100%;
+    min-width: 1440px;
     background: url(../images/common/sub_bg.png) no-repeat center/cover;
-    // overflow: auto;
+    overflow: auto;
     #main {
         position: relative;
         width: 100%;
         min-height: calc(100vh - 12rem);
         height: 100%;
-        overflow: auto;
-        // overflow: hidden;
         .main-inner {
-            max-width: 1440px;
-            min-width: 1220px;
             width: calc(100% - 4rem);
-            // width: 1440px;
+            max-width: 1440px;
             margin: 0 auto;
             strong {
                 font-family: $play;
@@ -299,8 +296,8 @@
                             line-height: 2.4rem;
                         }
                         input {
-                            // width: 38.5rem;
-                            width: 20vw;
+                            width: 38.5rem;
+                            // width: 20vw;
                             height: 3.55rem;
                             padding: 0 5rem 0 1.6rem;
                             border: none;
@@ -318,8 +315,8 @@
                     > .btn-wrap {
                         @include flexbox (row, flex-start, center);
                         gap: 0.8rem;
-                        // padding-right: 8rem;
-                        padding-right: 4.2vw;
+                        padding-right: 8rem;
+                        // padding-right: 4.2vw;
                         button {
                             width: 12rem;
                             height: 3.2rem;
@@ -468,6 +465,56 @@
                     }
                 }
             }
+            .result {
+                width: 100%;
+                .btn-wrap {
+                    @include flexbox(row, flex-end, center);
+                    gap: 1.6rem;
+                    button {
+                        height: 4rem;
+                        border-radius: 0.4rem;
+                        @include flexbox(row, center, center);
+                        gap: 0.8rem;
+                        &.stock-btn {
+                            width: 16.1rem;
+                            background: $black;
+                            color: $white;
+                            border: none;
+                            img {
+                                width: 2.4rem;
+                            }
+                        }
+                        &.excel-btn {
+                            width: 18.2rem;
+                            background: $white;
+                            border: 1px solid $black;
+                            img {
+                                width: 2.4rem;
+                            }
+                        }
+                    }
+                }
+                .tb-header {
+                    width: 1422px;
+                    thead {
+                        tr {
+                            height: 4.8rem;
+                            background: $black;
+                            th {
+                                vertical-align: middle;
+                                color: $white;
+                                &:not(:last-child) {
+                                    border-right: 1px solid $white;
+                                }
+                            }
+                        }
+                    }
+                }
+                // .tb-body-wrap {
+                //     width: 100%;
+                // }
+            }
+
             // .result {
             //     width: 100%;
             //     // width: 100vw;
@@ -501,7 +548,7 @@
             //     .table-wrap {
             //         width:100vw;
             //         // overflow-x: scroll;
-            //         overflow: auto;
+            //         // overflow: auto;
             //         .tb-header {
             //             // width: 100vw;
             //             width: 1422px;
@@ -519,7 +566,9 @@
             //             }
             //         }
             //         .tb-body-wrap {
-            //             width: 1422px;
+            //             // width: 1422px;
+            //             width: 100%;
+            //             max-width: 1440px;
             //             max-height: 420px;
             //             overflow-y: scroll;
             //             overflow-x: hidden;
