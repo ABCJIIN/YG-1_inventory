@@ -256,33 +256,53 @@
 #subContainer {
     width: 100%;
     min-width: 1440px;
-    background: url(../images/common/sub_bg.png) no-repeat center/cover;
+    background: url(../images/common/sub_bg.png) no-repeat right top/cover;
     overflow: auto;
     #main {
         position: relative;
         width: 100%;
-        min-height: calc(100vh - 12rem);
+        // min-height: calc(100vh - 12rem);
+        min-height: calc(100vh - 23.9rem);
         height: 100%;
-        .main-inner {
+        margin: 6.4rem 0 5.5rem;
+        strong {
+            display: block;
+            font-family: $play;
+            font-weight: 700;
+            font-size: 5.2rem;
+            line-height: 6.4rem;
+            // padding-top: 12.5rem;
+            padding: 12.5rem 0 3rem;
             width: calc(100% - 4rem);
             max-width: 1440px;
             margin: 0 auto;
-            strong {
-                font-family: $play;
-                font-weight: 700;
-                font-size: 5.2rem;
-                line-height: 6.4rem;
-            }
+        }
+        .main-inner {
+            width: calc(100% - 4rem);
+            max-width: 1440px;
+            min-height: calc(100vh - 23.9rem);
+            height: 100%;
+            margin: 0 auto;
+            @include flexbox(column, flex-start, center);
+            // strong {
+            //     display: inline-block;
+            //     font-family: $play;
+            //     font-weight: 700;
+            //     font-size: 5.2rem;
+            //     line-height: 6.4rem;
+            //     margin-top: 12.5rem;
+            // }
             .search {
                 width: 100%;
                 height: 8rem;
                 background: $white;
                 border-radius: 50rem;
                 box-shadow: 0 10px 10px -5px rgba(0 ,0 ,0 ,0.1);
-                margin-top: 3rem;
+                // margin-top: 3rem;
                 .search-inner {
-                    width: calc(100% - 4rem);
-                    margin: 0 auto;
+                    // width: calc(100% - 4rem);
+                    // margin: 0 auto;
+                    width: 100%;
                     height: 100%;
                     @include flexbox(row, center, center);
                     .input-wrap {
@@ -345,6 +365,7 @@
                                 border-radius: 0.4rem;
                                 border: 1px solid #DDDDDD;
                                 background: $white;
+                                z-index: 888;
                                 display: none;
                                 .inner {
                                     padding: 2rem 2.4rem 2.3rem;
@@ -467,6 +488,9 @@
             }
             .result {
                 width: 100%;
+                padding-top: 3.2rem;
+                @include flexbox(column, space-between, flex-end);
+                gap: 1.6rem;
                 .btn-wrap {
                     @include flexbox(row, flex-end, center);
                     gap: 1.6rem;
@@ -494,171 +518,232 @@
                         }
                     }
                 }
-                .tb-header {
-                    width: 1422px;
-                    thead {
-                        tr {
-                            height: 4.8rem;
-                            background: $black;
-                            th {
-                                vertical-align: middle;
-                                color: $white;
-                                &:not(:last-child) {
-                                    border-right: 1px solid $white;
+                .table-wrap {
+                    width: 100%;
+                    height: 47.6rem;
+                    overflow: auto;
+                    display: none;
+                    &::-webkit-scrollbar {
+                        width: 12px;
+                        height: 12px;
+                    }
+                    &::-webkit-scrollbar-thumb {
+                        background: #CCCCCC;
+                        border: 4px solid transparent;
+                        border-radius: 10px;
+                        background-clip: padding-box;
+                    }
+                    &::-webkit-scrollbar-track {
+                        background: $white;
+                        border-radius: 3px;
+                        border: 1px solid #DDDDDD;
+                    }
+                    &::-webkit-scrollbar-corner {
+                        background: transparent;
+                    }
+                    table {
+                        width: 1422px;
+                        white-space: nowrap;
+                        border-collapse: collapse;
+                        thead {
+                            tr {
+                                &:first-child {
+                                    position: sticky;
+                                    top: 0;
+                                    height: 4.8rem;
+                                    background: $black;
+                                    th {
+                                        vertical-align: middle;
+                                        font-size: 1.6rem;
+                                        font-weight: 600;
+                                        line-height: 2rem;
+                                        color: $white;
+                                        &:not(:last-child) {
+                                            border-right: 1px solid $white;
+                                        }
+                                        &:first-child {
+                                            border-radius: 0.4rem 0 0 0.4rem;
+                                        }
+                                        &:last-child {
+                                            border-radius: 0 0.4rem 0.4rem 0;
+                                        }
+                                    }
+                                }
+                                &:last-child {
+                                    background: transparent;
+                                    height: 0.8rem;
+                                }
+                            }
+                        }
+                        tbody {
+                            tr {
+                                height: 4.2rem;
+                                background: rgba(255,255,255,0.5);
+                                backdrop-filter: blur(3px);
+                                td {
+                                    vertical-align: middle;
+                                    padding: 0 1.7rem;
+                                    border: 1px solid #DDDDDD;
+                                    font-family: $poppins;
+                                    font-size: 1.6rem;
+                                    line-height: 2rem;
+                                    &:nth-of-type(1),&:nth-of-type(2),&:nth-of-type(4),&:nth-of-type(6) {
+                                        text-align: center;
+                                    }
+                                    &:nth-of-type(3) {
+                                        text-align: left;
+                                    }
+                                    &:nth-of-type(5),&:nth-of-type(7),&:nth-of-type(8),&:nth-of-type(9) {
+                                        text-align: right;
+                                    }
                                 }
                             }
                         }
                     }
                 }
-                // .tb-body-wrap {
-                //     width: 100%;
-                // }
+                .empty {
+                    width: 100%;
+                    height: 47.6rem;
+                    background: rgba(255,255,255,0.5);
+                    backdrop-filter: blur(3px);
+                    border: 1px solid #DDDDDD;
+                    border-radius: 0.4rem;
+                    @include flexbox(row, center, center);
+                    .inner {
+                        @include flexbox(column, center, center);
+                        img {
+                            width: 18rem;
+                            height: 18rem;
+                        }
+                        p {
+                            font-family: $poppins;
+                            &:nth-of-type(1) {
+                                font-size: 2rem;
+                                line-height: 3rem;
+                                padding-bottom: 0.8rem;
+                            }
+                            &:nth-of-type(2) {
+                                font-size: 1.6rem;
+                                line-height: 2.4rem;
+                                color: #656565;
+                            }
+                        }
+                    }
+                }
             }
+        }
+    }
+}
 
-            // .result {
-            //     width: 100%;
-            //     // width: 100vw;
-            //     .btn-wrap {
-            //         @include flexbox(row, flex-end, center);
-            //         gap: 1.6rem;
-            //         button {
-            //             height: 4rem;
-            //             border-radius: 0.4rem;
-            //             @include flexbox(row, center, center);
-            //             gap: 0.8rem;
-            //             &.stock-btn {
-            //                 width: 16.1rem;
-            //                 background: $black;
-            //                 color: $white;
-            //                 border: none;
-            //                 img {
-            //                     width: 2.4rem;
-            //                 }
-            //             }
-            //             &.excel-btn {
-            //                 width: 18.2rem;
-            //                 background: $white;
-            //                 border: 1px solid $black;
-            //                 img {
-            //                     width: 2.4rem;
-            //                 }
-            //             }
-            //         }
-            //     }
-            //     .table-wrap {
-            //         width:100vw;
-            //         // overflow-x: scroll;
-            //         // overflow: auto;
-            //         .tb-header {
-            //             // width: 100vw;
-            //             width: 1422px;
-            //             // width: 1422px;
-            //             margin-bottom: 2rem;
-            //             thead {
-            //                 tr {
-            //                     height: 4.8rem;
-            //                     background: $black;
-            //                     th {
-            //                         vertical-align: middle;
-            //                         color: $white;
-            //                     }
-            //                 }
-            //             }
-            //         }
-            //         .tb-body-wrap {
-            //             // width: 1422px;
-            //             width: 100%;
-            //             max-width: 1440px;
-            //             max-height: 420px;
-            //             overflow-y: scroll;
-            //             overflow-x: hidden;
-            //             .tb-body {
-            //                 width: 100%;
-            //                 width: 1422px;
-            //                 tbody {
-            //                     tr {
-            //                         height: 4.2rem;
-            //                         background: rgba(255,255,255,0.7);
-            //                         th {
-            //                             vertical-align: middle;
-            //                         }
-            //                     }
-            //                 }
-            //             }
-            //         }
-            //     }
-            //     // .table-wrap {
-            //     //     width: 100%;
-            //     //     max-height: 469px;
-            //     //     &::-webkit-scrollbar {
-            //     //         width: 1.2rem;
-            //     //     }
-            //     //     &::-webkit-scrollbar-thumb {
-            //     //         background: #CCCCCC;
-            //     //         border-radius: 50rem;
-            //     //     }
-            //     //     &::-webkit-scrollbar-track {
-            //     //         background: $white;
-            //     //     }
-            //     //     table {
-            //     //         width: 100%;
-            //     //         // border-collapse: separate;
-            //     //         // border-spacing: 0;
-            //     //         thead {
-            //     //             width: 100%;
-            //     //             height: 4.8rem;
-            //     //             background: $black;
-            //     //             position: sticky;
-            //     //             top: 0;
-            //     //             tr {
-            //     //                 &:first-child {
-            //     //                     th {
-            //     //                         vertical-align: middle;
-            //     //                         font-family: $poppins;
-            //     //                         font-weight: 600;
-            //     //                         font-size: 1.6rem;
-            //     //                         line-height: 2rem;
-            //     //                         color: $white;
-            //     //                         &:not(:last-child) {
-            //     //                             border-right: 1px solid $white;
-            //     //                         }
-            //     //                     }
-            //     //                 }
-            //     //                 &:last-child {
-            //     //                     width: 100%;
-            //     //                     height: 0.8rem;
-            //     //                     background: transparent;
-            //     //                 }
-            //     //             }
-            //     //         }
-            //     //         tbody {
-            //     //             width: 100%;
-            //     //             tr {
-            //     //                 height: 4.2rem;
-            //     //                 background: rgba(255,255,255, 0.7);
-            //     //                 td {
-            //     //                     vertical-align: middle;
-            //     //                     padding: 0 1.7rem;
-            //     //                     border: 1px solid #DDDDDD;
-            //     //                     font-family: $poppins;
-            //     //                     font-weight: 400;
-            //     //                     font-size: 1.6rem;
-            //     //                     line-height: 2rem;
-            //     //                     &:nth-of-type(1),&:nth-of-type(2),&:nth-of-type(4),&:nth-of-type(6) {
-            //     //                         text-align: center;
-            //     //                     }
-            //     //                     &:nth-of-type(3) {
-            //     //                         text-align: left;
-            //     //                     }
-            //     //                     &:nth-of-type(5),&:nth-of-type(7),&:nth-of-type(8),&:nth-of-type(9) {
-            //     //                         text-align: right;
-            //     //                     }
-            //     //                 }
-            //     //             }
-            //     //         }
-            //     //     }
-            //     // }
-            // }
+#upContainer {
+    width: 100%;
+    min-width: 1440px;
+    background: url(../images/common/sub_bg.png) no-repeat right top/cover;
+    overflow: auto;
+    #main {
+        position: relative;
+        width: 100%;
+        // height: calc(100vh - 12rem);
+        min-height: calc(100vh - 25.4rem);
+        height: 100%;
+        margin: 6.4rem 0 7rem;
+        @include flexbox(row, center, center);
+        .main-inner {
+            width: calc(100% - 4rem);
+            max-width: 1440px;
+            height: 64.6rem;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.5);
+            backdrop-filter: blur(3px);
+            border: 1px solid #DDDDDD;
+            border-radius: 0.4rem;
+            .title {
+                width: 1200px;
+                margin: 0 auto;
+                @include flexbox(row, flex-start, center);
+                gap: 0.7rem;
+                padding-top: 3.4rem;
+                strong {
+                    font-family: $play;
+                    font-weight: 700;
+                    font-size: 4.2rem;
+                    line-height: 6.4rem;
+                }
+                span {
+                    font-family: $poppins;
+                    font-size: 1.6rem;
+                    line-height: 2.4rem;
+                }
+            }
+            .upload-box {
+                width: 100%;
+                height: 37.4rem;
+                @include flexbox(column, flex-end, center);
+                img {
+                    height: 8rem;
+                }
+                p {
+                    font-family: $poppins;
+                    line-height: 2.4rem;
+                    &:nth-of-type(1) {
+                        font-size: 2rem;
+                        font-weight: 600;
+                        margin: 0.8rem 0.4rem;
+                    }
+                    &:nth-of-type(2) {
+                        font-size: 1.6rem;
+                    }
+                }
+                label {
+                    width: 12rem;
+                    height: 3.2rem;
+                    border: 1px solid $black;
+                    border-radius: 0.4rem;
+                    background: $white;
+                    font-family: $poppins;
+                    font-size: 1.4rem;
+                    line-height: 2rem;
+                    margin: 1.6rem 0 3.6rem;
+                    @include flexbox(row, center, center);
+                    cursor: pointer;
+                }
+                #fileUpBtn {
+                    display: none;
+                }
+                .upload-name {
+                    width: 70.8rem;
+                    height: 4.2rem;
+                    border-radius: 0.8rem;
+                    border: 1px dashed rgba(221,221,221,0.5);
+                    &::placeholder {
+                        font-family: $poppins;
+                        font-size: 1.6rem;
+                        line-height: 2.4rem;
+                        color: rgba(65,65,65,0.5);
+                        padding: 1rem;
+                    }
+                }
+            }
+            .btn-wrap {
+                width: 70.8rem;
+                @include flexbox(row, flex-end, center);
+                margin: 0 auto;
+                padding-top: 1.6rem;
+                #uploadBtn {
+                    width: 12rem;
+                    height: 3.2rem;
+                    font-family: $poppins;
+                    font-size: 1.4rem;
+                    line-height: 2rem;
+                    color: #AAAAAA;
+                    border-radius: 0.4rem;
+                    background: #EEEEEE;
+                    &.on {
+                        background: $black;
+                        color: $white;
+                    }
+                }
+            }
         }
     }
 }

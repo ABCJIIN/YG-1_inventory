@@ -30,6 +30,12 @@ body * {
           clip-path: polygon(0 0, 0 0, 0 0);
 }
 
+.red-emphasis {
+  font-weight: 600;
+  line-height: 1.9rem;
+  color: #ED1C24;
+}
+
 /* 노트북 */
 /* 테블릿 */
 /* 모바일 */
@@ -61,16 +67,22 @@ body * {
           clip-path: polygon(0 0, 0 0, 0 0);
 }
 
+.red-emphasis {
+  font-weight: 600;
+  line-height: 1.9rem;
+  color: #ED1C24;
+}
+
 /* 노트북 */
 /* 테블릿 */
 /* 모바일 */
-#subContainer #header {
+#subContainer #header, #upContainer #header {
   position: relative;
   width: 100%;
   background: white;
   box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.1);
 }
-#subContainer #header .inner {
+#subContainer #header .inner, #upContainer #header .inner {
   width: calc(100% - 4rem);
   height: 8rem;
   max-width: 1840px;
@@ -80,27 +92,27 @@ body * {
   justify-content: space-between;
   align-items: center;
 }
-#subContainer #header .inner .logo a {
+#subContainer #header .inner .logo a, #upContainer #header .inner .logo a {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   gap: 1.2rem;
 }
-#subContainer #header .inner .logo a span {
+#subContainer #header .inner .logo a span, #upContainer #header .inner .logo a span {
   font-family: "Play";
   font-weight: 700;
   font-size: 2rem;
   line-height: 2rem;
 }
-#subContainer #header .inner .btn-wrap {
+#subContainer #header .inner .btn-wrap, #upContainer #header .inner .btn-wrap {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   gap: 2.4rem;
 }
-#subContainer #header .inner .btn-wrap a {
+#subContainer #header .inner .btn-wrap a, #upContainer #header .inner .btn-wrap a {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -109,14 +121,14 @@ body * {
   height: 3.2rem;
   border-radius: 0.4rem;
 }
-#subContainer #header .inner .btn-wrap a:first-child {
+#subContainer #header .inner .btn-wrap a:first-child, #upContainer #header .inner .btn-wrap a:first-child {
   font-family: "Poppins";
   font-weight: 400;
   font-size: 1.4rem;
   line-height: 2rem;
   color: #757575;
 }
-#subContainer #header .inner .btn-wrap a:last-child {
+#subContainer #header .inner .btn-wrap a:last-child, #upContainer #header .inner .btn-wrap a:last-child {
   width: 12rem;
   font-family: "Poppins";
   font-weight: 400;
@@ -125,12 +137,21 @@ body * {
   color: #ffffff;
   background: #222222;
 }
-#subContainer #footer {
+#subContainer #header .inner .btn-wrap .popup, #upContainer #header .inner .btn-wrap .popup {
+  position: absolute;
+  top: 8rem;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 8rem);
+  background: rgba(34, 34, 34, 0.5);
+  z-index: 999;
+}
+#subContainer #footer, #upContainer #footer {
   position: relative;
   width: 100%;
   background: #DDDDDD;
 }
-#subContainer #footer .inner {
+#subContainer #footer .inner, #upContainer #footer .inner {
   width: 100%;
   height: 4rem;
   display: flex;
@@ -138,14 +159,14 @@ body * {
   justify-content: center;
   align-items: center;
 }
-#subContainer #footer .inner p {
+#subContainer #footer .inner p, #upContainer #footer .inner p {
   font-family: "Poppins";
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 2.4rem;
   color: #AAAAAA;
 }
-#subContainer #footer .inner p a {
+#subContainer #footer .inner p a, #upContainer #footer .inner p a {
   color: #AAAAAA;
 }
 
@@ -435,25 +456,37 @@ body * {
 #subContainer {
   width: 100%;
   min-width: 1440px;
-  background: url(../images/common/sub_bg.png) no-repeat center/cover;
+  background: url(../images/common/sub_bg.png) no-repeat right top/cover;
   overflow: auto;
 }
 #subContainer #main {
   position: relative;
   width: 100%;
-  min-height: calc(100vh - 12rem);
+  min-height: calc(100vh - 23.9rem);
   height: 100%;
+  margin: 6.4rem 0 5.5rem;
 }
-#subContainer #main .main-inner {
-  width: calc(100% - 4rem);
-  max-width: 1440px;
-  margin: 0 auto;
-}
-#subContainer #main .main-inner strong {
+#subContainer #main strong {
+  display: block;
   font-family: "Play";
   font-weight: 700;
   font-size: 5.2rem;
   line-height: 6.4rem;
+  padding: 12.5rem 0 3rem;
+  width: calc(100% - 4rem);
+  max-width: 1440px;
+  margin: 0 auto;
+}
+#subContainer #main .main-inner {
+  width: calc(100% - 4rem);
+  max-width: 1440px;
+  min-height: calc(100vh - 23.9rem);
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 #subContainer #main .main-inner .search {
   width: 100%;
@@ -461,11 +494,9 @@ body * {
   background: #ffffff;
   border-radius: 50rem;
   box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.1);
-  margin-top: 3rem;
 }
 #subContainer #main .main-inner .search .search-inner {
-  width: calc(100% - 4rem);
-  margin: 0 auto;
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: row;
@@ -544,6 +575,7 @@ body * {
   border-radius: 0.4rem;
   border: 1px solid #DDDDDD;
   background: #ffffff;
+  z-index: 888;
   display: none;
 }
 #subContainer #main .main-inner .search .search-inner > .btn-wrap .multi-wrap .multi-contents .inner {
@@ -684,6 +716,12 @@ body * {
 }
 #subContainer #main .main-inner .result {
   width: 100%;
+  padding-top: 3.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1.6rem;
 }
 #subContainer #main .main-inner .result .btn-wrap {
   display: flex;
@@ -718,17 +756,252 @@ body * {
 #subContainer #main .main-inner .result .btn-wrap button.excel-btn img {
   width: 2.4rem;
 }
-#subContainer #main .main-inner .result .tb-header {
-  width: 1422px;
+#subContainer #main .main-inner .result .table-wrap {
+  width: 100%;
+  height: 47.6rem;
+  overflow: auto;
+  display: none;
 }
-#subContainer #main .main-inner .result .tb-header thead tr {
+#subContainer #main .main-inner .result .table-wrap::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+#subContainer #main .main-inner .result .table-wrap::-webkit-scrollbar-thumb {
+  background: #CCCCCC;
+  border: 4px solid transparent;
+  border-radius: 10px;
+  background-clip: padding-box;
+}
+#subContainer #main .main-inner .result .table-wrap::-webkit-scrollbar-track {
+  background: #ffffff;
+  border-radius: 3px;
+  border: 1px solid #DDDDDD;
+}
+#subContainer #main .main-inner .result .table-wrap::-webkit-scrollbar-corner {
+  background: transparent;
+}
+#subContainer #main .main-inner .result .table-wrap table {
+  width: 1422px;
+  white-space: nowrap;
+  border-collapse: collapse;
+}
+#subContainer #main .main-inner .result .table-wrap table thead tr:first-child {
+  position: sticky;
+  top: 0;
   height: 4.8rem;
   background: #222222;
 }
-#subContainer #main .main-inner .result .tb-header thead tr th {
+#subContainer #main .main-inner .result .table-wrap table thead tr:first-child th {
   vertical-align: middle;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 2rem;
   color: #ffffff;
 }
-#subContainer #main .main-inner .result .tb-header thead tr th:not(:last-child) {
+#subContainer #main .main-inner .result .table-wrap table thead tr:first-child th:not(:last-child) {
   border-right: 1px solid #ffffff;
+}
+#subContainer #main .main-inner .result .table-wrap table thead tr:first-child th:first-child {
+  border-radius: 0.4rem 0 0 0.4rem;
+}
+#subContainer #main .main-inner .result .table-wrap table thead tr:first-child th:last-child {
+  border-radius: 0 0.4rem 0.4rem 0;
+}
+#subContainer #main .main-inner .result .table-wrap table thead tr:last-child {
+  background: transparent;
+  height: 0.8rem;
+}
+#subContainer #main .main-inner .result .table-wrap table tbody tr {
+  height: 4.2rem;
+  background: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+}
+#subContainer #main .main-inner .result .table-wrap table tbody tr td {
+  vertical-align: middle;
+  padding: 0 1.7rem;
+  border: 1px solid #DDDDDD;
+  font-family: "Poppins";
+  font-size: 1.6rem;
+  line-height: 2rem;
+}
+#subContainer #main .main-inner .result .table-wrap table tbody tr td:nth-of-type(1), #subContainer #main .main-inner .result .table-wrap table tbody tr td:nth-of-type(2), #subContainer #main .main-inner .result .table-wrap table tbody tr td:nth-of-type(4), #subContainer #main .main-inner .result .table-wrap table tbody tr td:nth-of-type(6) {
+  text-align: center;
+}
+#subContainer #main .main-inner .result .table-wrap table tbody tr td:nth-of-type(3) {
+  text-align: left;
+}
+#subContainer #main .main-inner .result .table-wrap table tbody tr td:nth-of-type(5), #subContainer #main .main-inner .result .table-wrap table tbody tr td:nth-of-type(7), #subContainer #main .main-inner .result .table-wrap table tbody tr td:nth-of-type(8), #subContainer #main .main-inner .result .table-wrap table tbody tr td:nth-of-type(9) {
+  text-align: right;
+}
+#subContainer #main .main-inner .result .empty {
+  width: 100%;
+  height: 47.6rem;
+  background: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+  border: 1px solid #DDDDDD;
+  border-radius: 0.4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#subContainer #main .main-inner .result .empty .inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#subContainer #main .main-inner .result .empty .inner img {
+  width: 18rem;
+  height: 18rem;
+}
+#subContainer #main .main-inner .result .empty .inner p {
+  font-family: "Poppins";
+}
+#subContainer #main .main-inner .result .empty .inner p:nth-of-type(1) {
+  font-size: 2rem;
+  line-height: 3rem;
+  padding-bottom: 0.8rem;
+}
+#subContainer #main .main-inner .result .empty .inner p:nth-of-type(2) {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  color: #656565;
+}
+
+#upContainer {
+  width: 100%;
+  min-width: 1440px;
+  background: url(../images/common/sub_bg.png) no-repeat right top/cover;
+  overflow: auto;
+}
+#upContainer #main {
+  position: relative;
+  width: 100%;
+  min-height: calc(100vh - 25.4rem);
+  height: 100%;
+  margin: 6.4rem 0 7rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#upContainer #main .main-inner {
+  width: calc(100% - 4rem);
+  max-width: 1440px;
+  height: 64.6rem;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+  border: 1px solid #DDDDDD;
+  border-radius: 0.4rem;
+}
+#upContainer #main .main-inner .title {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.7rem;
+  padding-top: 3.4rem;
+}
+#upContainer #main .main-inner .title strong {
+  font-family: "Play";
+  font-weight: 700;
+  font-size: 4.2rem;
+  line-height: 6.4rem;
+}
+#upContainer #main .main-inner .title span {
+  font-family: "Poppins";
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+}
+#upContainer #main .main-inner .upload-box {
+  width: 100%;
+  height: 37.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+#upContainer #main .main-inner .upload-box img {
+  height: 8rem;
+}
+#upContainer #main .main-inner .upload-box p {
+  font-family: "Poppins";
+  line-height: 2.4rem;
+}
+#upContainer #main .main-inner .upload-box p:nth-of-type(1) {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0.8rem 0.4rem;
+}
+#upContainer #main .main-inner .upload-box p:nth-of-type(2) {
+  font-size: 1.6rem;
+}
+#upContainer #main .main-inner .upload-box label {
+  width: 12rem;
+  height: 3.2rem;
+  border: 1px solid #222222;
+  border-radius: 0.4rem;
+  background: #ffffff;
+  font-family: "Poppins";
+  font-size: 1.4rem;
+  line-height: 2rem;
+  margin: 1.6rem 0 3.6rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+#upContainer #main .main-inner .upload-box #fileUpBtn {
+  display: none;
+}
+#upContainer #main .main-inner .upload-box .upload-name {
+  width: 70.8rem;
+  height: 4.2rem;
+  border-radius: 0.8rem;
+  border: 1px dashed rgba(221, 221, 221, 0.5);
+}
+#upContainer #main .main-inner .upload-box .upload-name::-moz-placeholder {
+  font-family: "Poppins";
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  color: rgba(65, 65, 65, 0.5);
+  padding: 1rem;
+}
+#upContainer #main .main-inner .upload-box .upload-name::placeholder {
+  font-family: "Poppins";
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  color: rgba(65, 65, 65, 0.5);
+  padding: 1rem;
+}
+#upContainer #main .main-inner .btn-wrap {
+  width: 70.8rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0 auto;
+  padding-top: 1.6rem;
+}
+#upContainer #main .main-inner .btn-wrap #uploadBtn {
+  width: 12rem;
+  height: 3.2rem;
+  font-family: "Poppins";
+  font-size: 1.4rem;
+  line-height: 2rem;
+  color: #AAAAAA;
+  border-radius: 0.4rem;
+  background: #EEEEEE;
+}
+#upContainer #main .main-inner .btn-wrap #uploadBtn.on {
+  background: #222222;
+  color: #ffffff;
 }

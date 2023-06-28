@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>global_inventory Stock Upload</title>
+    <!-- jquery cdn -->
+	<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <!-- 로컬 소스 -->
+	<link rel="stylesheet" href="../assets/css/reset.css">
+	<link rel="stylesheet" href="../assets/css/font.css">
+	<link rel="stylesheet" href="../assets/css/main.css">
+    <script src="../assets/js/main.js"></script>
+</head>
+<body>
+    <div id="upContainer">
+        <div id="header"></div>
+        <section id="main">
+            <div class="main-inner">
+                <div class="title">
+                    <strong>Stock Upload</strong>
+                    <span>Upload your files</span>
+                </div>
+                <div class="upload-box">
+                    <img src="../assets/images/icon/upload_file.png" alt="upload file">
+                    <p>Drag & Drop</p>
+                    <p>CSV file format only</p>
+                    <label for="fileUpBtn">Find</label>
+                    <input type="file" id="fileUpBtn">
+                    <input class="upload-name" placeholder="No file selected">
+                </div>
+                <div class="btn-wrap">
+                    <button type="button" id="uploadBtn">Upload</button>
+                </div>
+            </div>
+        </section>
+        <div id="footer"></div>
+    </div>
+</body>
+</html>
