@@ -1,7 +1,7 @@
 @import "common";
 @import "responsive";
 
-#subContainer {
+#subContainer, #upContainer {
     #header {
         position: relative;
         width: 100%;
@@ -49,6 +49,15 @@
                         color: $white;
                         background: $black;
                     }
+                }
+                .popup {
+                    position: absolute;
+                    top: 8rem;
+                    left: 0;
+                    width: 100%;
+                    height: calc(100vh - 8rem);
+                    background: rgba(34,34,34,0.5);
+                    z-index: 999;
                 }
             }
         }
