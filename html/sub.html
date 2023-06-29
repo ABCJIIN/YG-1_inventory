@@ -16,58 +16,58 @@
     <div id="subContainer">
         <div id="header"></div>
         <section id="main">
-			<!-- <strong>Please search for the EDP No.</strong> -->
+			<strong class="edp-title">Please search for the EDP No.</strong>
             <div class="main-inner">
                 <div class="search">
 					<div class="search-inner">
-						<div class="input-wrap">
+						<form class="input-wrap">
 							<label for="edpNo">EDP No.</label>
 							<input type="search" id="edpNo" placeholder="Search EDP Number">
-						</div>
-						<div class="btn-wrap">
-							<button class="inquiry" type="button">Inquiry</button>
-							<div class="multi-wrap">
-								<button class="multi" type="button">Multi search</button>
-								<div class="multi-contents">
-									<div class="inner">
-										<span>Multi search</span>
-										<div class="tag-wrap">
-											<div>CDRA04020<button class="tag-close" type="button"></button></div>
-											<div>DGN508003G<button class="tag-close" type="button"></button></div>
-											<div>D1GP101014K<button class="tag-close" type="button"></button></div>
-										</div>
+							<button id="inquiry" type="button">Inquiry</button>
+						</form>
+						<div class="multi-wrap">
+							<button id="multi" type="button">Multi search</button>
+							<div class="multi-contents">
+								<div class="inner">
+									<span>Multi search</span>
+									<div class="tag-wrap">
+										<div>CDRA04020<button class="tag-close" type="reseet"></button></div>
+										<div>DGN508003G<button class="tag-close" type="reset"></button></div>
+										<div>D1GP101014K<button class="tag-close" type="reset"></button></div>
+									</div>
+									<form>
 										<textarea placeholder="EDP No. Delimiter “Enter”"></textarea>
 										<div class="btn-wrap">
 											<button class="multi-done" type="button">Done</button>
 											<button class="multi-search" type="button">Search</button>
 										</div>
-									</div>
+									</form>
 								</div>
 							</div>
 						</div>
-						<div class="ckbox-wrap">
+						<form class="ckbox-wrap">
 							<span>Area:</span>
-							<div class="hq-wrap">
+							<p class="hq-wrap">
 								<input id="hq" name="hq" type="checkbox" checked>
 								<label for="hq">HQ</label>
-							</div>
-							<div class="europe-wrap">
+							</p>
+							<p class="europe-wrap">
 								<input id="europe" name="europe" type="checkbox">
 								<label for="europe">Europe</label>
-							</div>
-							<div class="america-wrap">
+							</p>
+							<p class="america-wrap">
 								<input id="america" name="america" type="checkbox">
 								<label for="america">America</label>
-							</div>
-							<div class="asia-wrap">
+							</p>
+							<p class="asia-wrap">
 								<input id="asia" name="asia" type="checkbox">
 								<label for="asia">Aisa</label>
-							</div>
-							<div class="china-wrap">
+							</p>
+							<p class="china-wrap">
 								<input id="china" name="china" type="checkbox">
 								<label for="china">China</label>
-							</div>
-						</div>
+							</p>
+						</form>
 					</div>
                 </div>
 				<div class="result">

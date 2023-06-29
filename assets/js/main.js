@@ -4,32 +4,49 @@ $(document).ready(function(){
     $("#footer").not("#container #footer").load("../../html/include/footer.html");//푸터 INCLUDE
 });
 
-//Multi search 버튼
+//sub.html
 $(document).ready(function() {
-    $('.multi').click(function(){
+    $('#multi').click(function(){
         $('.multi-contents').toggle();
     });
-});
-
-//Multi search 내부 tag-close 버튼 삭제 기능
-$(document).ready(function() {
+// Multi search 내부 tag-close 버튼 삭제 기능
     $('.tag-close').click(function(){
         $(this).parent('div').hide();
     });
 });
 
-//upload.html - 파일 선택시 input 파일명 동일하게 변경&Upload 버튼 컬러 변경
+//sub.html - .multi-contents 영역 제외한 부분 클릭시
+$('html').click(function(e) {   
+	if(!$(e.target).parents().hasClass("multi-wrap")) {
+		$(".multi-contents").hide();
+	}
+});
+
+//sub.html - result
 $(document).ready(function() {
-    $("#fileUpBtn").on('change',function(){
+    $('#inquiry').click(function() {
+        $('.edp-title').hide();
+        $('.table-wrap').show();
+    });
+});
+
+//upload.html - 파일 선택시 input 파일명 동일하게 변경&Upload 버튼 컬러 변경&reset버튼 활성화
+$(document).ready(function() {
+    $("#fileUpBtn").on('change', function() {
         var fileName = $("#fileUpBtn").val();
         $(".upload-name").val(fileName);
+        $("#findReset").show();
         $("#uploadBtn").addClass('on');
     });
     // 파일 이름이 삭제되었을 때
     $(".upload-name").on('input', function() {
         var fileName = $(".upload-name").val();
         if (fileName === '') {
+            $("#findReset").hide();
             $("#uploadBtn").removeClass('on');
         }
     });
+    $("#findReset").on('click', function() {
+        $("#findReset").hide();
+    })
 });

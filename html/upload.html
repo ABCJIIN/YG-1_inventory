@@ -25,12 +25,15 @@
                     <img src="../assets/images/icon/upload_file.png" alt="upload file">
                     <p>Drag & Drop</p>
                     <p>CSV file format only</p>
-                    <label for="fileUpBtn">Find</label>
-                    <input type="file" id="fileUpBtn">
-                    <input class="upload-name" placeholder="No file selected">
-                </div>
-                <div class="btn-wrap">
-                    <button type="button" id="uploadBtn">Upload</button>
+                    <form>
+                        <label class="fill-up-btn" for="fileUpBtn">Find</label>
+                        <input type="file" id="fileUpBtn">
+                        <p>
+                            <input class="upload-name" placeholder="No file selected">
+                            <button type="reset" id="findReset"><img src="../assets/images/icon/file_delete.png" alt="file delete"></button>
+                            <button type="button" id="uploadBtn">Upload</button>
+                        </p>
+                    </form>
                 </div>
             </div>
         </section>

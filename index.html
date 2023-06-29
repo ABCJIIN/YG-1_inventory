@@ -33,15 +33,15 @@
                                 <strong>LOGIN</strong>
                                 <span>Global Inventory</span>
                             </div>
-                            <form  name="frm" method="post" action="chk_proc.asp" >
-                                <div class="id-wrap">
-                                    <span>ID</span><input type="text" name="id" value="" id="loginput" placeholder="Type your username" />
-                                </div>
-                                <div class="pw-wrap">
-                                    <span>PW</span><input type="password" name="pwd"   onkeydown="if(event.keyCode==13) { frmSUB();}" value="" id="loginput" placeholder="Type your password" />
-                                </div>
+                            <form>
+                                <p class="id-wrap">
+                                    <label for="id">ID</label><input type="text" name="id" value="" id="id" placeholder="Type your username" />
+                                </p>
+                                <p class="pw-wrap">
+                                    <label for="pw">PW</label><input type="password" name="pw" value="" id="pw" placeholder="Type your password" />
+                                </p>
+                                <button type="button" id="logsubmit">Login</button>
                             </form>
-                            <button type="button" id="logsubmit" onclick="frmSUB();">Login</button>
                         </div>
                     </div>
                 </div>
@@ -69,7 +69,7 @@
                             </p>
                         </div>
                         <p>
-                            In case EDP NO is not exist, it is shown as “EDP error!” on the page.
+                            In case EDP NO is not exist, it is shown as “EDP error!” on the page.<br>
                             In case the stock is not exist, it is shown as “No Stock”
                         </p>
                     </div>
