@@ -59,6 +59,76 @@
                     height: calc(100vh - 8rem);
                     background: rgba(34,34,34,0.5);
                     z-index: 888;
+                    @include flexbox(row, center, center);
+                    // display: none;
+                    .modal {
+                        width: 58.6rem;
+                        min-height: 29.5rem;
+                        padding: 2rem 2.4rem 2.4rem;
+                        background: #FFFFFF;
+                        border-radius: 0.4rem;
+                        border: 1px solid #DDDDDD;
+                        @include flexbox(column, space-between, flex-start);
+                        strong {
+                            font-size: $play;
+                            font-weight: 700;
+                            font-size: 2.4rem;
+                            line-height: 2.4rem;
+                        }
+                        form {
+                            @include flexbox(column, center, flex-start);
+                            gap: 1.6rem;
+                            p {
+                                position: relative;
+                                &:not(:last-child) {
+                                    @include flexbox(row, flex-start, center);
+                                    label {
+                                        width: 15.9rem;
+                                        text-align: left;
+                                        font-family: $poppins;
+                                        font-weight: 600;
+                                        font-size: 1.6rem;
+                                        line-height: 2.4rem;
+                                    }
+                                    input {
+                                        width: 37.9rem;
+                                        height: 3.6rem;
+                                        background: #F8F8F8;
+                                        border: none;
+                                        border-bottom: 1px solid #707070;
+                                    }
+                                    img {
+                                        position: absolute;
+                                        right: 0;
+                                        top: 50%;
+                                        transform: translateY(-50%);
+                                        display: none;
+                                    }
+                                }
+                                &:last-child {
+                                    width: 100%;
+                                    @include flexbox(row, flex-end, center);
+                                    gap: 1.1rem;
+                                    button {
+                                        width: 14rem;
+                                        height: 3.2rem;
+                                        font-family: $poppins;
+                                        font-size: 1.4rem;
+                                        line-height: 2rem;
+                                        border-radius: 0.4rem;
+                                        &#modifyBtn {
+                                            background: $white;
+                                            border: 1px solid #707070;
+                                        }
+                                        &#changeConfirm {
+                                            color: #AAAAAA;
+                                            background: #EEEEEE;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }

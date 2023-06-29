@@ -1,8 +1,79 @@
-// 로그인 페이지를 제외한 공통 헤더 푸터 INCLUDE
-$(document).ready(function(){
-    $("#header").not("#container #header").load("../../html/include/header.html");//헤더 INCLUDE
-    $("#footer").not("#container #footer").load("../../html/include/footer.html");//푸터 INCLUDE
+// 로그인 페이지를 제외한 공통 헤더 푸터 INCLUDE & Change Password 모달
+$(document).ready(function () {
+    $("#header").not("#container #header").load("../../html/include/header.html", function () {
+        $('.modal-wrap').hide();
+        $('#changePw').click(function () {
+            var modalWrap = $(this).next('.modal-wrap');
+            if (modalWrap.is(":hidden")) {
+                modalWrap.show();
+            } else {
+                modalWrap.hide();
+            }
+        });
+        $(".default-show").each(function() {
+            var defaultType = $(this).attr("type");
+            $(this).data("defaultType", defaultType);
+        });
+        
+        $(".default-show").on("input", function() {
+            var inputVal = $(this).val();
+            var showEye = $(this).siblings(".show-eye");
+            var hideEye = $(this).siblings(".hide-eye");
+            if (inputVal.trim() !== "") {
+                showEye.show();
+            } else {
+                showEye.hide();
+                hideEye.hide();
+                $(this).attr("type", $(this).data("defaultType"));
+            }
+        });
+        
+        $(".default-hide").each(function() {
+            var defaultType = $(this).attr("type");
+            $(this).data("defaultType", defaultType);
+        });
+        
+        $(".default-hide").on("input", function() {
+            var inputVal = $(this).val();
+            var showEye = $(this).siblings(".show-eye");
+            var hideEye = $(this).siblings(".hide-eye");
+            if (inputVal.trim() !== "") {
+                hideEye.show();
+            } else {
+                showEye.hide();
+                hideEye.hide();
+                $(this).attr("type", $(this).data("defaultType"));
+            }
+        });
+        
+        $(".show-eye").on("click", function() {
+            var hideEye = $(this).siblings(".hide-eye");
+            $(this).hide();
+            hideEye.show();
+            $(this).siblings(".default-show").attr("type", "password");
+            $(this).siblings(".default-hide").attr("type", "password");
+        });
+        
+        $(".hide-eye").on("click", function() {
+            var showEye = $(this).siblings(".show-eye");
+            $(this).hide();
+            showEye.show();
+            $(this).siblings(".default-show").attr("type", "text");
+            $(this).siblings(".default-hide").attr("type", "text");
+        });
+        $("#modifyBtn").on("click", function() {
+            var modalWrap = $(this).parents('.modal-wrap');
+            if (modalWrap.is(":visible")) {
+                modalWrap.hide();
+            } else {
+                modalWrap.show();
+            }
+        });
+    });
+    $("#footer").not("#container #footer").load("../../html/include/footer.html");
 });
+
+
 
 //sub.html
 $(document).ready(function() {
