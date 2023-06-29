@@ -107,11 +107,10 @@
                             width: 100%;
                             @include flexbox(column, flex-start, flex-start);
                             gap: 2.4rem;
-                            > div {
+                            > p {
                                 width: 100%;
                                 @include flexbox(row, space-between, center);
-                                span {
-                                    display: inline-block;
+                                label {
                                     width: 4rem;
                                     text-align: left;
                                     font-family: $poppins;
@@ -150,19 +149,19 @@
                                     }
                                 }
                             }
-                        }
-                        button {
-                            width: 100%;
-                            height: 4.4rem;
-                            margin-top: 4rem;
-                            border: none;
-                            border-radius: 5rem; 
-                            background: $black;
-                            font-family: $poppins;
-                            font-weight: 400;
-                            font-size: 1.6rem;
-                            line-height: 2.4rem;
-                            color: $white;
+                            button {
+                                width: 100%;
+                                height: 4.4rem;
+                                margin-top: 4rem;
+                                border: none;
+                                border-radius: 5rem; 
+                                background: $black;
+                                font-family: $poppins;
+                                font-weight: 400;
+                                font-size: 1.6rem;
+                                line-height: 2.4rem;
+                                color: $white;
+                            }
                         }
                     }
                 }
@@ -271,7 +270,6 @@
             font-weight: 700;
             font-size: 5.2rem;
             line-height: 6.4rem;
-            // padding-top: 12.5rem;
             padding: 12.5rem 0 3rem;
             width: calc(100% - 4rem);
             max-width: 1440px;
@@ -280,18 +278,11 @@
         .main-inner {
             width: calc(100% - 4rem);
             max-width: 1440px;
-            min-height: calc(100vh - 23.9rem);
+            // min-height: calc(100vh - 23.9rem);
+            min-height: calc(100vh - 45.8rem);
             height: 100%;
             margin: 0 auto;
             @include flexbox(column, flex-start, center);
-            // strong {
-            //     display: inline-block;
-            //     font-family: $play;
-            //     font-weight: 700;
-            //     font-size: 5.2rem;
-            //     line-height: 6.4rem;
-            //     margin-top: 12.5rem;
-            // }
             .search {
                 width: 100%;
                 height: 8rem;
@@ -308,7 +299,7 @@
                     .input-wrap {
                         @include flexbox(row, flex-start, center);
                         gap: 0.8rem;
-                        padding-right: 2.4rem;
+                        // padding-right: 2.4rem;
                         label {
                             font-family: $poppins;
                             font-weight: 600;
@@ -317,7 +308,6 @@
                         }
                         input {
                             width: 38.5rem;
-                            // width: 20vw;
                             height: 3.55rem;
                             padding: 0 5rem 0 1.6rem;
                             border: none;
@@ -331,13 +321,23 @@
                                 color: #C6C6C6;
                             }
                         }
+                        #inquiry {
+                            width: 12rem;
+                            height: 3.2rem;
+                            margin-left: 1.6rem;
+                            font-family: $poppins;
+                            font-weight: 400;
+                            font-size: 1.4rem;
+                            line-height: 2rem;
+                            border-radius: 0.4rem;
+                            background: $black;
+                            color: $white;
+                        }
                     }
-                    > .btn-wrap {
-                        @include flexbox (row, flex-start, center);
-                        gap: 0.8rem;
-                        padding-right: 8rem;
-                        // padding-right: 4.2vw;
-                        button {
+                    .multi-wrap {
+                        position: relative;
+                        margin: 0 8rem 0 0.8rem;
+                        #multi {
                             width: 12rem;
                             height: 3.2rem;
                             font-family: $poppins;
@@ -345,98 +345,89 @@
                             font-size: 1.4rem;
                             line-height: 2rem;
                             border-radius: 0.4rem;
-                            &.inquiry {
-                                background: $black;
-                                color: $white;
-                            }
-                            &.multi {
-                                background: $white;
-                                border: 1px solid #707070;
-                            }
+                            background: $white;
+                            border: 1px solid #707070;
                         }
-                        .multi-wrap {
-                            position: relative;
-                            .multi-contents {
-                                position: absolute;
-                                top: 4.1rem;
-                                left: 0;
-                                width: 58.6rem;
-                                // height: 34.2rem;
-                                border-radius: 0.4rem;
-                                border: 1px solid #DDDDDD;
-                                background: $white;
-                                z-index: 888;
-                                display: none;
-                                .inner {
-                                    padding: 2rem 2.4rem 2.3rem;
-                                    > span {
-                                        font-family: $play;
-                                        font-weight: 700;
-                                        font-size: 2.4rem;
-                                        line-height: 2.4rem;
-                                    }
-                                    .tag-wrap {
-                                        width: 100%;
-                                        padding: 3.1rem 0 1.6rem;
-                                        @include flexbox(row, flex-start, center);
-                                        flex-wrap: wrap;
+                        .multi-contents {
+                            position: absolute;
+                            top: 4.1rem;
+                            left: 0;
+                            width: 58.6rem;
+                            // height: 34.2rem;
+                            border-radius: 0.4rem;
+                            border: 1px solid #DDDDDD;
+                            background: $white;
+                            z-index: 777;
+                            display: none;
+                            .inner {
+                                padding: 2rem 2.4rem 2.3rem;
+                                > span {
+                                    font-family: $play;
+                                    font-weight: 700;
+                                    font-size: 2.4rem;
+                                    line-height: 2.4rem;
+                                }
+                                .tag-wrap {
+                                    width: 100%;
+                                    padding: 3.1rem 0 1.6rem;
+                                    @include flexbox(row, flex-start, center);
+                                    flex-wrap: wrap;
+                                    gap: 0.8rem;
+                                    div {
+                                        @include flexbox(row, space-between, center);
                                         gap: 0.8rem;
-                                        div {
-                                            @include flexbox(row, space-between, center);
-                                            gap: 0.8rem;
-                                            height: 3.1rem;
-                                            padding: 0 1.6rem;
-                                            background: #DDDDDD;
-                                            border-radius: 50rem;
-                                            font-family: $poppins;
-                                            font-weight: 400;
-                                            font-size: 1.6rem;
-                                            line-height: 2rem;
-                                            .tag-close {
-                                                width: 1.6rem;
-                                                height: 1.6rem;
-                                                background: url(../images/icon/tag_close.png) no-repeat center/contain;
-                                            }
+                                        height: 3.1rem;
+                                        padding: 0 1.6rem;
+                                        background: #DDDDDD;
+                                        border-radius: 50rem;
+                                        font-family: $poppins;
+                                        font-weight: 400;
+                                        font-size: 1.6rem;
+                                        line-height: 2rem;
+                                        .tag-close {
+                                            width: 1.6rem;
+                                            height: 1.6rem;
+                                            background: url(../images/icon/tag_close.png) no-repeat center/contain;
                                         }
                                     }
-                                    textarea {
-                                        width: 100%;
-                                        height: 14rem;
-                                        padding: 1.2rem 1.6rem;
-                                        background: #F8F8F8;
-                                        border: none;
-                                        border-bottom: 1px solid #DDDDDD;
-                                        resize: none;
-                                        &::placeholder {
-                                            font-family: $poppins;
-                                            font-weight: 400;
-                                            font-size: 1.6rem;
-                                            line-height: 2.4rem;
-                                            color: #C6C6C6;
-                                        }
+                                }
+                                textarea {
+                                    width: 100%;
+                                    height: 14rem;
+                                    padding: 1.2rem 1.6rem;
+                                    background: #F8F8F8;
+                                    border: none;
+                                    border-bottom: 1px solid #DDDDDD;
+                                    resize: none;
+                                    &::placeholder {
+                                        font-family: $poppins;
+                                        font-weight: 400;
+                                        font-size: 1.6rem;
+                                        line-height: 2.4rem;
+                                        color: #C6C6C6;
                                     }
-                                    .btn-wrap {
-                                        width: 100%;
-                                        padding-top: 1.5rem;
-                                        @include flexbox(row, flex-end, center);
-                                        gap: 1.6rem;
-                                        button {
-                                            width: 14rem;
-                                            height: 3.2rem;
-                                            border-radius: 0.4rem;
-                                            font-family: $poppins;
-                                            font-weight: 400;
-                                            font-size: 1.4rem;
-                                            line-height: 2rem;
-                                            &.multi-done {
-                                                border: 1px solid #707070;
-                                                background: $white;
-                                            }
-                                            &.multi-search {
-                                                border: none;
-                                                background: $black;
-                                                color: white;
-                                            }
+                                }
+                                .btn-wrap {
+                                    width: 100%;
+                                    padding-top: 1.5rem;
+                                    @include flexbox(row, flex-end, center);
+                                    gap: 1.6rem;
+                                    button {
+                                        width: 14rem;
+                                        height: 3.2rem;
+                                        border-radius: 0.4rem;
+                                        font-family: $poppins;
+                                        font-weight: 400;
+                                        font-size: 1.4rem;
+                                        line-height: 2rem;
+                                        &.multi-done {
+                                            border: 1px solid #707070;
+                                            background: $white;
+                                        }
+                                        &.multi-search {
+                                            border: none;
+                                            background: $black;
+                                            color: white;
                                         }
                                     }
                                 }
@@ -451,7 +442,7 @@
                             font-size: 2rem;
                             line-height: 3rem;
                         }
-                        div {
+                        p {
                             padding-left: 1.2rem;
                             input {
                                 position: absolute;
@@ -522,6 +513,7 @@
                     width: 100%;
                     height: 47.6rem;
                     overflow: auto;
+                    backdrop-filter: blur(3px);
                     display: none;
                     &::-webkit-scrollbar {
                         width: 12px;
@@ -579,7 +571,6 @@
                             tr {
                                 height: 4.2rem;
                                 background: rgba(255,255,255,0.5);
-                                backdrop-filter: blur(3px);
                                 td {
                                     vertical-align: middle;
                                     padding: 0 1.7rem;
@@ -609,6 +600,7 @@
                     border: 1px solid #DDDDDD;
                     border-radius: 0.4rem;
                     @include flexbox(row, center, center);
+                    display: none;
                     .inner {
                         @include flexbox(column, center, center);
                         img {
@@ -677,9 +669,9 @@
             }
             .upload-box {
                 width: 100%;
-                height: 37.4rem;
+                height: 42.2rem;
                 @include flexbox(column, flex-end, center);
-                img {
+                img > {
                     height: 8rem;
                 }
                 p {
@@ -694,53 +686,65 @@
                         font-size: 1.6rem;
                     }
                 }
-                label {
-                    width: 12rem;
-                    height: 3.2rem;
-                    border: 1px solid $black;
-                    border-radius: 0.4rem;
-                    background: $white;
-                    font-family: $poppins;
-                    font-size: 1.4rem;
-                    line-height: 2rem;
-                    margin: 1.6rem 0 3.6rem;
-                    @include flexbox(row, center, center);
-                    cursor: pointer;
-                }
-                #fileUpBtn {
-                    display: none;
-                }
-                .upload-name {
-                    width: 70.8rem;
-                    height: 4.2rem;
-                    border-radius: 0.8rem;
-                    border: 1px dashed rgba(221,221,221,0.5);
-                    &::placeholder {
+                form {
+                    .fill-up-btn {
+                        width: 12rem;
+                        height: 3.2rem;
+                        border: 1px solid $black;
+                        border-radius: 0.4rem;
+                        background: $white;
                         font-family: $poppins;
-                        font-size: 1.6rem;
-                        line-height: 2.4rem;
-                        color: rgba(65,65,65,0.5);
-                        padding: 1rem;
+                        font-size: 1.4rem;
+                        line-height: 2rem;
+                        margin: 1.6rem auto 3.6rem;
+                        @include flexbox(row, center, center);
+                        cursor: pointer;
                     }
-                }
-            }
-            .btn-wrap {
-                width: 70.8rem;
-                @include flexbox(row, flex-end, center);
-                margin: 0 auto;
-                padding-top: 1.6rem;
-                #uploadBtn {
-                    width: 12rem;
-                    height: 3.2rem;
-                    font-family: $poppins;
-                    font-size: 1.4rem;
-                    line-height: 2rem;
-                    color: #AAAAAA;
-                    border-radius: 0.4rem;
-                    background: #EEEEEE;
-                    &.on {
-                        background: $black;
-                        color: $white;
+                    #fileUpBtn {
+                        display: none;
+                    }
+                    p {
+                        position: relative;
+                        @include flexbox(column, center, flex-end);
+                        .upload-name {
+                            width: 70.8rem;
+                            height: 4.2rem;
+                            border-radius: 0.8rem;
+                            border: 1px dashed rgba(221,221,221,0.5);
+                            &::placeholder {
+                                font-family: $poppins;
+                                font-size: 1.6rem;
+                                line-height: 2.4rem;
+                                color: rgba(65,65,65,0.5);
+                                padding: 1rem;
+                            }
+                        }
+                        #findReset {
+                            position: absolute;
+                            top: 0.9rem;
+                            right: 2.1rem;
+                            width: 2.4rem;
+                            height: 2.4rem;
+                            background: transparent;
+                            border: 0;
+                            border-radius: 0.4rem;
+                            display: none;
+                        }
+                        #uploadBtn {
+                            width: 12rem;
+                            height: 3.2rem;
+                            margin-top: 1.6rem;
+                            font-family: $poppins;
+                            font-size: 1.4rem;
+                            line-height: 2rem;
+                            color: #AAAAAA;
+                            border-radius: 0.4rem;
+                            background: #EEEEEE;
+                            &.on {
+                                background: $black;
+                                color: $white;
+                            }
+                        }
                     }
                 }
             }

@@ -81,6 +81,7 @@ body * {
   width: 100%;
   background: white;
   box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+  z-index: 999;
 }
 #subContainer #header .inner, #upContainer #header .inner {
   width: calc(100% - 4rem);
@@ -137,14 +138,14 @@ body * {
   color: #ffffff;
   background: #222222;
 }
-#subContainer #header .inner .btn-wrap .popup, #upContainer #header .inner .btn-wrap .popup {
+#subContainer #header .inner .btn-wrap .modal-wrap, #upContainer #header .inner .btn-wrap .modal-wrap {
   position: absolute;
   top: 8rem;
   left: 0;
   width: 100%;
   height: calc(100vh - 8rem);
   background: rgba(34, 34, 34, 0.5);
-  z-index: 999;
+  z-index: 888;
 }
 #subContainer #footer, #upContainer #footer {
   position: relative;
@@ -302,15 +303,14 @@ body * {
   align-items: flex-start;
   gap: 2.4rem;
 }
-#container #main .main-inner #login #content #log-form form > div {
+#container #main .main-inner #login #content #log-form form > p {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
-#container #main .main-inner #login #content #log-form form > div span {
-  display: inline-block;
+#container #main .main-inner #login #content #log-form form > p label {
   width: 4rem;
   text-align: left;
   font-family: "Poppins";
@@ -318,7 +318,7 @@ body * {
   font-size: 2rem;
   line-height: 2.4rem;
 }
-#container #main .main-inner #login #content #log-form form > div input {
+#container #main .main-inner #login #content #log-form form > p input {
   width: calc(100% - 4rem);
   height: 3.6rem;
   padding: 0 1rem;
@@ -326,7 +326,7 @@ body * {
   border-bottom: 1px solid #C6C6C6;
   background: #F8F8F8;
 }
-#container #main .main-inner #login #content #log-form form > div input::-moz-placeholder {
+#container #main .main-inner #login #content #log-form form > p input::-moz-placeholder {
   font-family: "Poppins";
   font-weight: 400;
   font-size: 1.6rem;
@@ -334,7 +334,7 @@ body * {
   color: #C6C6C6;
   padding-left: 4.8rem;
 }
-#container #main .main-inner #login #content #log-form form > div input::placeholder {
+#container #main .main-inner #login #content #log-form form > p input::placeholder {
   font-family: "Poppins";
   font-weight: 400;
   font-size: 1.6rem;
@@ -354,7 +354,7 @@ body * {
 #container #main .main-inner #login #content #log-form form .pw-wrap input::placeholder {
   background: url(../images/icon/pw.png) no-repeat 1.6rem 50%/2.4rem 2.4rem;
 }
-#container #main .main-inner #login #content #log-form button {
+#container #main .main-inner #login #content #log-form form button {
   width: 100%;
   height: 4.4rem;
   margin-top: 4rem;
@@ -480,7 +480,7 @@ body * {
 #subContainer #main .main-inner {
   width: calc(100% - 4rem);
   max-width: 1440px;
-  min-height: calc(100vh - 23.9rem);
+  min-height: calc(100vh - 45.8rem);
   height: 100%;
   margin: 0 auto;
   display: flex;
@@ -509,7 +509,6 @@ body * {
   justify-content: flex-start;
   align-items: center;
   gap: 0.8rem;
-  padding-right: 2.4rem;
 }
 #subContainer #main .main-inner .search .search-inner .input-wrap label {
   font-family: "Poppins";
@@ -539,15 +538,23 @@ body * {
   line-height: 2.4rem;
   color: #C6C6C6;
 }
-#subContainer #main .main-inner .search .search-inner > .btn-wrap {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 0.8rem;
-  padding-right: 8rem;
+#subContainer #main .main-inner .search .search-inner .input-wrap #inquiry {
+  width: 12rem;
+  height: 3.2rem;
+  margin-left: 1.6rem;
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  border-radius: 0.4rem;
+  background: #222222;
+  color: #ffffff;
 }
-#subContainer #main .main-inner .search .search-inner > .btn-wrap button {
+#subContainer #main .main-inner .search .search-inner .multi-wrap {
+  position: relative;
+  margin: 0 8rem 0 0.8rem;
+}
+#subContainer #main .main-inner .search .search-inner .multi-wrap #multi {
   width: 12rem;
   height: 3.2rem;
   font-family: "Poppins";
@@ -555,19 +562,10 @@ body * {
   font-size: 1.4rem;
   line-height: 2rem;
   border-radius: 0.4rem;
-}
-#subContainer #main .main-inner .search .search-inner > .btn-wrap button.inquiry {
-  background: #222222;
-  color: #ffffff;
-}
-#subContainer #main .main-inner .search .search-inner > .btn-wrap button.multi {
   background: #ffffff;
   border: 1px solid #707070;
 }
-#subContainer #main .main-inner .search .search-inner > .btn-wrap .multi-wrap {
-  position: relative;
-}
-#subContainer #main .main-inner .search .search-inner > .btn-wrap .multi-wrap .multi-contents {
+#subContainer #main .main-inner .search .search-inner .multi-wrap .multi-contents {
   position: absolute;
   top: 4.1rem;
   left: 0;
@@ -575,19 +573,19 @@ body * {
   border-radius: 0.4rem;
   border: 1px solid #DDDDDD;
   background: #ffffff;
-  z-index: 888;
+  z-index: 777;
   display: none;
 }
-#subContainer #main .main-inner .search .search-inner > .btn-wrap .multi-wrap .multi-contents .inner {
+#subContainer #main .main-inner .search .search-inner .multi-wrap .multi-contents .inner {
   padding: 2rem 2.4rem 2.3rem;
 }
-#subContainer #main .main-inner .search .search-inner > .btn-wrap .multi-wrap .multi-contents .inner > span {
+#subContainer #main .main-inner .search .search-inner .multi-wrap .multi-contents .inner > span {
   font-family: "Play";
   font-weight: 700;
   font-size: 2.4rem;
   line-height: 2.4rem;
 }
-#subContainer #main .main-inner .search .search-inner > .btn-wrap .multi-wrap .multi-contents .inner .tag-wrap {
+#subContainer #main .main-inner .search .search-inner .multi-wrap .multi-contents .inner .tag-wrap {
   width: 100%;
   padding: 3.1rem 0 1.6rem;
   display: flex;
@@ -597,7 +595,7 @@ body * {
   flex-wrap: wrap;
   gap: 0.8rem;
 }
-#subContainer #main .main-inner .search .search-inner > .btn-wrap .multi-wrap .multi-contents .inner .tag-wrap div {
+#subContainer #main .main-inner .search .search-inner .multi-wrap .multi-contents .inner .tag-wrap div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -612,12 +610,12 @@ body * {
   font-size: 1.6rem;
   line-height: 2rem;
 }
-#subContainer #main .main-inner .search .search-inner > .btn-wrap .multi-wrap .multi-contents .inner .tag-wrap div .tag-close {
+#subContainer #main .main-inner .search .search-inner .multi-wrap .multi-contents .inner .tag-wrap div .tag-close {
   width: 1.6rem;
   height: 1.6rem;
   background: url(../images/icon/tag_close.png) no-repeat center/contain;
 }
-#subContainer #main .main-inner .search .search-inner > .btn-wrap .multi-wrap .multi-contents .inner textarea {
+#subContainer #main .main-inner .search .search-inner .multi-wrap .multi-contents .inner textarea {
   width: 100%;
   height: 14rem;
   padding: 1.2rem 1.6rem;
@@ -626,21 +624,21 @@ body * {
   border-bottom: 1px solid #DDDDDD;
   resize: none;
 }
-#subContainer #main .main-inner .search .search-inner > .btn-wrap .multi-wrap .multi-contents .inner textarea::-moz-placeholder {
+#subContainer #main .main-inner .search .search-inner .multi-wrap .multi-contents .inner textarea::-moz-placeholder {
   font-family: "Poppins";
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 2.4rem;
   color: #C6C6C6;
 }
-#subContainer #main .main-inner .search .search-inner > .btn-wrap .multi-wrap .multi-contents .inner textarea::placeholder {
+#subContainer #main .main-inner .search .search-inner .multi-wrap .multi-contents .inner textarea::placeholder {
   font-family: "Poppins";
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 2.4rem;
   color: #C6C6C6;
 }
-#subContainer #main .main-inner .search .search-inner > .btn-wrap .multi-wrap .multi-contents .inner .btn-wrap {
+#subContainer #main .main-inner .search .search-inner .multi-wrap .multi-contents .inner .btn-wrap {
   width: 100%;
   padding-top: 1.5rem;
   display: flex;
@@ -649,7 +647,7 @@ body * {
   align-items: center;
   gap: 1.6rem;
 }
-#subContainer #main .main-inner .search .search-inner > .btn-wrap .multi-wrap .multi-contents .inner .btn-wrap button {
+#subContainer #main .main-inner .search .search-inner .multi-wrap .multi-contents .inner .btn-wrap button {
   width: 14rem;
   height: 3.2rem;
   border-radius: 0.4rem;
@@ -658,11 +656,11 @@ body * {
   font-size: 1.4rem;
   line-height: 2rem;
 }
-#subContainer #main .main-inner .search .search-inner > .btn-wrap .multi-wrap .multi-contents .inner .btn-wrap button.multi-done {
+#subContainer #main .main-inner .search .search-inner .multi-wrap .multi-contents .inner .btn-wrap button.multi-done {
   border: 1px solid #707070;
   background: #ffffff;
 }
-#subContainer #main .main-inner .search .search-inner > .btn-wrap .multi-wrap .multi-contents .inner .btn-wrap button.multi-search {
+#subContainer #main .main-inner .search .search-inner .multi-wrap .multi-contents .inner .btn-wrap button.multi-search {
   border: none;
   background: #222222;
   color: white;
@@ -679,21 +677,21 @@ body * {
   font-size: 2rem;
   line-height: 3rem;
 }
-#subContainer #main .main-inner .search .search-inner .ckbox-wrap div {
+#subContainer #main .main-inner .search .search-inner .ckbox-wrap p {
   padding-left: 1.2rem;
 }
-#subContainer #main .main-inner .search .search-inner .ckbox-wrap div input {
+#subContainer #main .main-inner .search .search-inner .ckbox-wrap p input {
   position: absolute;
   clip: rect(0 0 0 0);
   width: 1px;
   height: 1px;
   overflow: hidden;
 }
-#subContainer #main .main-inner .search .search-inner .ckbox-wrap div input:checked + label::before {
+#subContainer #main .main-inner .search .search-inner .ckbox-wrap p input:checked + label::before {
   background: url(../images/icon/search_checked.png) no-repeat center/contain;
   border: none;
 }
-#subContainer #main .main-inner .search .search-inner .ckbox-wrap div label {
+#subContainer #main .main-inner .search .search-inner .ckbox-wrap p label {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -704,7 +702,7 @@ body * {
   font-size: 1.6rem;
   line-height: 2.4rem;
 }
-#subContainer #main .main-inner .search .search-inner .ckbox-wrap div label::before {
+#subContainer #main .main-inner .search .search-inner .ckbox-wrap p label::before {
   display: inline-block;
   content: "";
   box-sizing: border-box;
@@ -760,6 +758,8 @@ body * {
   width: 100%;
   height: 47.6rem;
   overflow: auto;
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
   display: none;
 }
 #subContainer #main .main-inner .result .table-wrap::-webkit-scrollbar {
@@ -814,8 +814,6 @@ body * {
 #subContainer #main .main-inner .result .table-wrap table tbody tr {
   height: 4.2rem;
   background: rgba(255, 255, 255, 0.5);
-  -webkit-backdrop-filter: blur(3px);
-          backdrop-filter: blur(3px);
 }
 #subContainer #main .main-inner .result .table-wrap table tbody tr td {
   vertical-align: middle;
@@ -846,6 +844,7 @@ body * {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  display: none;
 }
 #subContainer #main .main-inner .result .empty .inner {
   display: flex;
@@ -922,14 +921,11 @@ body * {
 }
 #upContainer #main .main-inner .upload-box {
   width: 100%;
-  height: 37.4rem;
+  height: 42.2rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-}
-#upContainer #main .main-inner .upload-box img {
-  height: 8rem;
 }
 #upContainer #main .main-inner .upload-box p {
   font-family: "Poppins";
@@ -943,7 +939,7 @@ body * {
 #upContainer #main .main-inner .upload-box p:nth-of-type(2) {
   font-size: 1.6rem;
 }
-#upContainer #main .main-inner .upload-box label {
+#upContainer #main .main-inner .upload-box form .fill-up-btn {
   width: 12rem;
   height: 3.2rem;
   border: 1px solid #222222;
@@ -952,48 +948,58 @@ body * {
   font-family: "Poppins";
   font-size: 1.4rem;
   line-height: 2rem;
-  margin: 1.6rem 0 3.6rem;
+  margin: 1.6rem auto 3.6rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   cursor: pointer;
 }
-#upContainer #main .main-inner .upload-box #fileUpBtn {
+#upContainer #main .main-inner .upload-box form #fileUpBtn {
   display: none;
 }
-#upContainer #main .main-inner .upload-box .upload-name {
+#upContainer #main .main-inner .upload-box form p {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+#upContainer #main .main-inner .upload-box form p .upload-name {
   width: 70.8rem;
   height: 4.2rem;
   border-radius: 0.8rem;
   border: 1px dashed rgba(221, 221, 221, 0.5);
 }
-#upContainer #main .main-inner .upload-box .upload-name::-moz-placeholder {
+#upContainer #main .main-inner .upload-box form p .upload-name::-moz-placeholder {
   font-family: "Poppins";
   font-size: 1.6rem;
   line-height: 2.4rem;
   color: rgba(65, 65, 65, 0.5);
   padding: 1rem;
 }
-#upContainer #main .main-inner .upload-box .upload-name::placeholder {
+#upContainer #main .main-inner .upload-box form p .upload-name::placeholder {
   font-family: "Poppins";
   font-size: 1.6rem;
   line-height: 2.4rem;
   color: rgba(65, 65, 65, 0.5);
   padding: 1rem;
 }
-#upContainer #main .main-inner .btn-wrap {
-  width: 70.8rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-  margin: 0 auto;
-  padding-top: 1.6rem;
+#upContainer #main .main-inner .upload-box form p #findReset {
+  position: absolute;
+  top: 0.9rem;
+  right: 2.1rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  background: transparent;
+  border: 0;
+  border-radius: 0.4rem;
+  display: none;
 }
-#upContainer #main .main-inner .btn-wrap #uploadBtn {
+#upContainer #main .main-inner .upload-box form p #uploadBtn {
   width: 12rem;
   height: 3.2rem;
+  margin-top: 1.6rem;
   font-family: "Poppins";
   font-size: 1.4rem;
   line-height: 2rem;
@@ -1001,7 +1007,7 @@ body * {
   border-radius: 0.4rem;
   background: #EEEEEE;
 }
-#upContainer #main .main-inner .btn-wrap #uploadBtn.on {
+#upContainer #main .main-inner .upload-box form p #uploadBtn.on {
   background: #222222;
   color: #ffffff;
 }
