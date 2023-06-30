@@ -251,7 +251,7 @@
         }
     }
 }
-
+//서브페이지
 #subContainer {
     width: 100%;
     min-width: 1440px;
@@ -627,6 +627,7 @@
     }
 }
 
+// 업로드페이지
 #upContainer {
     width: 100%;
     min-width: 1440px;
@@ -643,7 +644,7 @@
         .main-inner {
             width: calc(100% - 4rem);
             max-width: 1440px;
-            height: 64.6rem;
+            // height: 64.6rem;
             margin: 0 auto;
             background: rgba(255,255,255,0.5);
             backdrop-filter: blur(3px);
