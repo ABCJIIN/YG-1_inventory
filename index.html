@@ -17,61 +17,64 @@
         <div id="header">
             <div class="logo">
                 <a href="index.html">
-                    <img src="assets/images/common/logo.png" alt="logo" id="logo"/>
-                    <span>INVENTORY<br>INQUIRY</span>
+                    <img src="assets/images/common/main_logo.png" alt="logo" id="logo"/>
                 </a>
             </div>
         </div>
         <div id="main">
             <div class="main-inner">
-                <button id="loginBtn" class="on" type="button"><img src="assets/images/icon/locked_red.png" alt="자물쇠 아이콘">LOGIN</button>
-                <button id="supportBtn" type="button"><img src="assets/images/icon/question.png" alt="물음표 아이콘">CUSTOMER SUPPORT</button>
-                <div id="login">
-                    <div id="content">
-                        <div id="log-form">
-                            <div class="title">
-                                <strong>LOGIN</strong>
-                                <span>Global Inventory</span>
+                <div class="btn-wrap">
+                    <button id="loginBtn" class="on" type="button"><img src="assets/images/icon/locked_red.png" alt="자물쇠 아이콘">LOGIN</button>
+                    <button id="supportBtn" type="button"><img src="assets/images/icon/question.png" alt="물음표 아이콘">CUSTOMER SUPPORT</button>
+                </div>
+                <div class="contents-wrap">
+                    <div id="login">
+                        <div id="content">
+                            <div id="log-form">
+                                <div class="title">
+                                    <strong>LOGIN</strong>
+                                    <span>Global Inventory</span>
+                                </div>
+                                <form>
+                                    <p class="id-wrap">
+                                        <label for="id">ID</label><input type="text" name="id" value="" id="id" placeholder="Type your username" />
+                                    </p>
+                                    <p class="pw-wrap">
+                                        <label for="pw">PW</label><input type="password" name="pw" value="" id="pw" placeholder="Type your password" />
+                                    </p>
+                                    <button type="button" id="logsubmit" onclick="location.href='../html/sub.html';">Login</button>
+                                </form>
                             </div>
-                            <form>
-                                <p class="id-wrap">
-                                    <label for="id">ID</label><input type="text" name="id" value="" id="id" placeholder="Type your username" />
-                                </p>
-                                <p class="pw-wrap">
-                                    <label for="pw">PW</label><input type="password" name="pw" value="" id="pw" placeholder="Type your password" />
-                                </p>
-                                <button type="button" id="logsubmit" onclick="location.href='../html/sub.html';">Login</button>
-                            </form>
                         </div>
                     </div>
-                </div>
-                <div id="support" >
-                    <div class="support-inner">
-                        <strong>CUSTOMER SUPPORT</strong>
-                        <p>If any problems or inquiry, please send email to Administrator<br>
-                        email address : <a title="marketing@yg1.kr" href="mailto:marketing@yg1.kr"><b>marketing@yg1.kr</b></a>
-                        </p>
-                        <span>FAQ</span>
-                        <div>
-                            <p>
-                                <span>Q1.</span>“This account is being logged in. Please check on your account.” message was popped up. How can I do?
+                    <div id="support" >
+                        <div class="support-inner">
+                            <strong>CUSTOMER SUPPORT</strong>
+                            <p>If any problems or inquiry, please send email to Administrator<br>
+                            email address : <a title="marketing@yg1.kr" href="mailto:marketing@yg1.kr"><b>marketing@yg1.kr</b></a>
                             </p>
+                            <span>FAQ</span>
+                            <div>
+                                <p>
+                                    <span>Q1.</span>“This account is being logged in. Please check on your account.” message was popped up. How can I do?
+                                </p>
+                                <p>
+                                    <span>A1.</span>You have to wait 10 minutes to re-login.
+                                </p>
+                            </div>
+                            <div>
+                                <p>
+                                    <span>Q2.</span>Then, how can I prevent the problem?
+                                </p>
+                                <p>
+                                    <span>A2.</span>DO NOT forget to click the “logout” before you close the browser.
+                                </p>
+                            </div>
                             <p>
-                                <span>A1.</span>You have to wait 10 minutes to re-login.
+                                In case EDP NO is not exist, it is shown as “EDP error!” on the page.<br>
+                                In case the stock is not exist, it is shown as “No Stock”
                             </p>
                         </div>
-                        <div>
-                            <p>
-                                <span>Q2.</span>Then, how can I prevent the problem?
-                            </p>
-                            <p>
-                                <span>A2.</span>DO NOT forget to click the “logout” before you close the browser.
-                            </p>
-                        </div>
-                        <p>
-                            In case EDP NO is not exist, it is shown as “EDP error!” on the page.<br>
-                            In case the stock is not exist, it is shown as “No Stock”
-                        </p>
                     </div>
                 </div>
             </div>

@@ -101,13 +101,16 @@ $(document).ready(function() {
     $('.tag-close').click(function(){
         $(this).parent('div').hide();
     });
-});
-
 //sub.html - .multi-contents 영역 제외한 부분 클릭시
-$('html').click(function(e) {   
-	if(!$(e.target).parents().hasClass("multi-wrap")) {
-		$(".multi-contents").hide();
-	}
+    $('html').click(function(e) {   
+        if(!$(e.target).parents().hasClass("multi-wrap")) {
+            $(".multi-contents").hide();
+        }
+    });
+// Done 버튼 클릭시
+    $(".multi-done").on("click", function() {
+        $(".multi-contents").hide();
+    });
 });
 
 //sub.html - result
@@ -133,6 +136,9 @@ $(document).ready(function() {
             $("#findReset").hide();
             $("#uploadBtn").removeClass('on');
         }
+    });
+    $("#findReset").on('click', function() {
+        $("#uploadBtn").removeClass('on');
     });
     $("#findReset").on('click', function() {
         $("#findReset").hide();
