@@ -168,6 +168,7 @@ body * {
   font-weight: 700;
   font-size: 2.4rem;
   line-height: 2.4rem;
+  padding-bottom: 3rem;
 }
 #subContainer #header .inner .btn-wrap .modal-wrap .modal form, #upContainer #header .inner .btn-wrap .modal-wrap .modal form {
   display: flex;
@@ -176,38 +177,62 @@ body * {
   align-items: flex-start;
   gap: 1.6rem;
 }
-#subContainer #header .inner .btn-wrap .modal-wrap .modal form p, #upContainer #header .inner .btn-wrap .modal-wrap .modal form p {
+#subContainer #header .inner .btn-wrap .modal-wrap .modal form div, #upContainer #header .inner .btn-wrap .modal-wrap .modal form div {
   position: relative;
 }
-#subContainer #header .inner .btn-wrap .modal-wrap .modal form p:not(:last-child), #upContainer #header .inner .btn-wrap .modal-wrap .modal form p:not(:last-child) {
+#subContainer #header .inner .btn-wrap .modal-wrap .modal form div:not(:last-child), #upContainer #header .inner .btn-wrap .modal-wrap .modal form div:not(:last-child) {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+#subContainer #header .inner .btn-wrap .modal-wrap .modal form div:not(:last-child) label, #upContainer #header .inner .btn-wrap .modal-wrap .modal form div:not(:last-child) label {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-}
-#subContainer #header .inner .btn-wrap .modal-wrap .modal form p:not(:last-child) label, #upContainer #header .inner .btn-wrap .modal-wrap .modal form p:not(:last-child) label {
   width: 15.9rem;
-  text-align: left;
+  height: 3.6rem;
   font-family: "Poppins";
   font-weight: 600;
   font-size: 1.6rem;
   line-height: 2.4rem;
 }
-#subContainer #header .inner .btn-wrap .modal-wrap .modal form p:not(:last-child) input, #upContainer #header .inner .btn-wrap .modal-wrap .modal form p:not(:last-child) input {
+#subContainer #header .inner .btn-wrap .modal-wrap .modal form div:not(:last-child) .input-wrap, #upContainer #header .inner .btn-wrap .modal-wrap .modal form div:not(:last-child) .input-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: lex-start;
+}
+#subContainer #header .inner .btn-wrap .modal-wrap .modal form div:not(:last-child) .input-wrap.wrong input, #upContainer #header .inner .btn-wrap .modal-wrap .modal form div:not(:last-child) .input-wrap.wrong input {
+  border-bottom: 1px solid #ED1C24;
+}
+#subContainer #header .inner .btn-wrap .modal-wrap .modal form div:not(:last-child) .input-wrap.wrong span, #upContainer #header .inner .btn-wrap .modal-wrap .modal form div:not(:last-child) .input-wrap.wrong span {
+  display: block;
+}
+#subContainer #header .inner .btn-wrap .modal-wrap .modal form div:not(:last-child) .input-wrap input, #upContainer #header .inner .btn-wrap .modal-wrap .modal form div:not(:last-child) .input-wrap input {
   width: 37.9rem;
   height: 3.6rem;
   background: #F8F8F8;
   border: none;
   border-bottom: 1px solid #707070;
 }
-#subContainer #header .inner .btn-wrap .modal-wrap .modal form p:not(:last-child) img, #upContainer #header .inner .btn-wrap .modal-wrap .modal form p:not(:last-child) img {
+#subContainer #header .inner .btn-wrap .modal-wrap .modal form div:not(:last-child) .input-wrap img, #upContainer #header .inner .btn-wrap .modal-wrap .modal form div:not(:last-child) .input-wrap img {
   position: absolute;
   right: 0;
   top: 50%;
   transform: translateY(-50%);
   display: none;
 }
-#subContainer #header .inner .btn-wrap .modal-wrap .modal form p:last-child, #upContainer #header .inner .btn-wrap .modal-wrap .modal form p:last-child {
+#subContainer #header .inner .btn-wrap .modal-wrap .modal form div:not(:last-child) .input-wrap span, #upContainer #header .inner .btn-wrap .modal-wrap .modal form div:not(:last-child) .input-wrap span {
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  color: #ED1C24;
+  display: none;
+}
+#subContainer #header .inner .btn-wrap .modal-wrap .modal form div:last-child, #upContainer #header .inner .btn-wrap .modal-wrap .modal form div:last-child {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -215,7 +240,7 @@ body * {
   align-items: center;
   gap: 1.1rem;
 }
-#subContainer #header .inner .btn-wrap .modal-wrap .modal form p:last-child button, #upContainer #header .inner .btn-wrap .modal-wrap .modal form p:last-child button {
+#subContainer #header .inner .btn-wrap .modal-wrap .modal form div:last-child button, #upContainer #header .inner .btn-wrap .modal-wrap .modal form div:last-child button {
   width: 14rem;
   height: 3.2rem;
   font-family: "Poppins";
@@ -223,13 +248,17 @@ body * {
   line-height: 2rem;
   border-radius: 0.4rem;
 }
-#subContainer #header .inner .btn-wrap .modal-wrap .modal form p:last-child button#modifyBtn, #upContainer #header .inner .btn-wrap .modal-wrap .modal form p:last-child button#modifyBtn {
+#subContainer #header .inner .btn-wrap .modal-wrap .modal form div:last-child button#modifyBtn, #upContainer #header .inner .btn-wrap .modal-wrap .modal form div:last-child button#modifyBtn {
   background: #ffffff;
   border: 1px solid #707070;
 }
-#subContainer #header .inner .btn-wrap .modal-wrap .modal form p:last-child button#changeConfirm, #upContainer #header .inner .btn-wrap .modal-wrap .modal form p:last-child button#changeConfirm {
+#subContainer #header .inner .btn-wrap .modal-wrap .modal form div:last-child button#changeConfirm, #upContainer #header .inner .btn-wrap .modal-wrap .modal form div:last-child button#changeConfirm {
   color: #AAAAAA;
   background: #EEEEEE;
+}
+#subContainer #header .inner .btn-wrap .modal-wrap .modal form div:last-child button#changeConfirm.on, #upContainer #header .inner .btn-wrap .modal-wrap .modal form div:last-child button#changeConfirm.on {
+  color: #ffffff;
+  background: #222222;
 }
 #subContainer #footer, #upContainer #footer {
   position: relative;
@@ -974,7 +1003,6 @@ body * {
 #upContainer #main .main-inner {
   width: calc(100% - 4rem);
   max-width: 1440px;
-  height: 64.6rem;
   margin: 0 auto;
   background: rgba(255, 255, 255, 0.5);
   -webkit-backdrop-filter: blur(3px);

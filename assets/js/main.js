@@ -26,6 +26,7 @@ $(document).ready(function () {
                 hideEye.hide();
                 $(this).attr("type", $(this).data("defaultType"));
             }
+            updateChangeConfirmButton();
         });
         
         $(".default-hide").each(function() {
@@ -44,7 +45,23 @@ $(document).ready(function () {
                 hideEye.hide();
                 $(this).attr("type", $(this).data("defaultType"));
             }
+            updateChangeConfirmButton();
         });
+
+        function updateChangeConfirmButton() {
+            var allInputsFilled = true;
+            $(".default-show, .default-hide").each(function() {
+                if ($(this).val().trim() === "") {
+                    allInputsFilled = false;
+                    return false; // exit the loop early if any input is empty
+                }
+            });
+            if (allInputsFilled) {
+                $("#changeConfirm").addClass("on");
+            } else {
+                $("#changeConfirm").removeClass("on");
+            }
+        }
         
         $(".show-eye").on("click", function() {
             var hideEye = $(this).siblings(".hide-eye");

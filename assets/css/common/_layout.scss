@@ -60,7 +60,6 @@
                     background: rgba(34,34,34,0.5);
                     z-index: 888;
                     @include flexbox(row, center, center);
-                    // display: none;
                     .modal {
                         width: 58.6rem;
                         min-height: 29.5rem;
@@ -74,35 +73,56 @@
                             font-weight: 700;
                             font-size: 2.4rem;
                             line-height: 2.4rem;
+                            padding-bottom: 3rem;
                         }
                         form {
                             @include flexbox(column, center, flex-start);
                             gap: 1.6rem;
-                            p {
+                            div {
                                 position: relative;
                                 &:not(:last-child) {
-                                    @include flexbox(row, flex-start, center);
+                                    @include flexbox(row, flex-start, flex-start);
                                     label {
+                                        @include flexbox(row, flex-start, center);
                                         width: 15.9rem;
-                                        text-align: left;
+                                        height: 3.6rem;
                                         font-family: $poppins;
                                         font-weight: 600;
                                         font-size: 1.6rem;
                                         line-height: 2.4rem;
                                     }
-                                    input {
-                                        width: 37.9rem;
-                                        height: 3.6rem;
-                                        background: #F8F8F8;
-                                        border: none;
-                                        border-bottom: 1px solid #707070;
-                                    }
-                                    img {
-                                        position: absolute;
-                                        right: 0;
-                                        top: 50%;
-                                        transform: translateY(-50%);
-                                        display: none;
+                                    .input-wrap {
+                                        @include flexbox(column, flex-start, lex-start);
+                                        &.wrong {
+                                            input {
+                                                border-bottom: 1px solid #ED1C24;
+                                            }
+                                            span {
+                                                display: block;
+                                            }
+                                        }
+                                        input {
+                                            width: 37.9rem;
+                                            height: 3.6rem;
+                                            background: #F8F8F8;
+                                            border: none;
+                                            border-bottom: 1px solid #707070;
+                                        }
+                                        img {
+                                            position: absolute;
+                                            right: 0;
+                                            top: 50%;
+                                            transform: translateY(-50%);
+                                            display: none;
+                                        }
+                                        span {
+                                            font-family: $poppins;
+                                            font-weight: 400;
+                                            font-size: 1.4rem;
+                                            line-height: 2.4rem;
+                                            color: #ED1C24;
+                                            display: none;
+                                        }
                                     }
                                 }
                                 &:last-child {
@@ -123,6 +143,10 @@
                                         &#changeConfirm {
                                             color: #AAAAAA;
                                             background: #EEEEEE;
+                                            &.on {
+                                                color: $white;
+                                                background: $black;
+                                            }
                                         }
                                     }
                                 }
