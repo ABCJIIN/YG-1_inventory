@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>global_inventory</title>
+	<link rel="icon" href="/assets/images/favicon.ico">
 	<!-- jquery cdn -->
 	<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <!-- 로컬 소스 -->
@@ -15,264 +16,266 @@
 <body>
     <div id="subContainer">
         <div id="header"></div>
-        <section id="main">
-			<strong class="edp-title">Please search for the EDP No.</strong>
-            <div class="main-inner">
-                <div class="search">
-					<div class="search-inner">
-						<form class="input-wrap">
-							<label for="edpNo">EDP No.</label>
-							<input type="search" id="edpNo" placeholder="Search EDP Number">
-							<button id="inquiry" type="button">Inquiry</button>
-						</form>
-						<div class="multi-wrap">
-							<button id="multi" type="button">Multi search</button>
-							<div class="multi-contents">
-								<div class="inner">
-									<span>Multi search</span>
-									<div class="tag-wrap">
-										<div>CDRA04020<button class="tag-close" type="reseet"></button></div>
-										<div>DGN508003G<button class="tag-close" type="reset"></button></div>
-										<div>D1GP101014K<button class="tag-close" type="reset"></button></div>
-									</div>
-									<form>
-										<textarea placeholder="EDP No. Delimiter “Enter”"></textarea>
-										<div class="btn-wrap">
-											<button class="multi-done" type="button">Done</button>
-											<button class="multi-search" type="button">Search</button>
+		<div id="mainWrap">
+			<section id="main">
+				<strong class="edp-title">Please search for the EDP No.</strong>
+				<div class="main-inner">
+					<div class="search">
+						<div class="search-inner">
+							<form class="input-wrap">
+								<label for="edpNo">EDP No.</label>
+								<input type="search" id="edpNo" placeholder="Search EDP Number">
+								<button id="inquiry" type="button">Inquiry</button>
+							</form>
+							<div class="multi-wrap">
+								<button id="multi" type="button">Multi search</button>
+								<div class="multi-contents">
+									<div class="inner">
+										<span>Multi search</span>
+										<div class="tag-wrap">
+											<div>CDRA04020<button class="tag-close" type="reseet"></button></div>
+											<div>DGN508003G<button class="tag-close" type="reset"></button></div>
+											<div>D1GP101014K<button class="tag-close" type="reset"></button></div>
 										</div>
-									</form>
+										<form>
+											<textarea placeholder="EDP No. Delimiter “Enter”"></textarea>
+											<div class="btn-wrap">
+												<button class="multi-done" type="button">Done</button>
+												<button class="multi-search" type="button">Search</button>
+											</div>
+										</form>
+									</div>
 								</div>
 							</div>
+							<form class="ckbox-wrap">
+								<span>Area:</span>
+								<p class="hq-wrap">
+									<input id="hq" name="hq" type="checkbox" checked>
+									<label for="hq">HQ</label>
+								</p>
+								<p class="europe-wrap">
+									<input id="europe" name="europe" type="checkbox">
+									<label for="europe">Europe</label>
+								</p>
+								<p class="america-wrap">
+									<input id="america" name="america" type="checkbox">
+									<label for="america">America</label>
+								</p>
+								<p class="asia-wrap">
+									<input id="asia" name="asia" type="checkbox">
+									<label for="asia">Aisa</label>
+								</p>
+								<p class="china-wrap">
+									<input id="china" name="china" type="checkbox">
+									<label for="china">China</label>
+								</p>
+							</form>
 						</div>
-						<form class="ckbox-wrap">
-							<span>Area:</span>
-							<p class="hq-wrap">
-								<input id="hq" name="hq" type="checkbox" checked>
-								<label for="hq">HQ</label>
-							</p>
-							<p class="europe-wrap">
-								<input id="europe" name="europe" type="checkbox">
-								<label for="europe">Europe</label>
-							</p>
-							<p class="america-wrap">
-								<input id="america" name="america" type="checkbox">
-								<label for="america">America</label>
-							</p>
-							<p class="asia-wrap">
-								<input id="asia" name="asia" type="checkbox">
-								<label for="asia">Aisa</label>
-							</p>
-							<p class="china-wrap">
-								<input id="china" name="china" type="checkbox">
-								<label for="china">China</label>
-							</p>
-						</form>
 					</div>
-                </div>
-				<div class="result">
-					<div class="btn-wrap">
-						<button class="stock-btn" type="button" onclick="location.href='../html/upload.html';"><img src="../assets/images/icon/stock_upload.png" alt="stock upload">Stock Upload</button>
-						<a class="excel-btn" href="../assets/file/test.xlsx"><img src="../assets/images/icon/excel_download.png" alt="excel download">Excel Download</a>
-					</div>
-					<!-- 데이터가 존재할 때 출력되는 테이블입니다 -->
-					<div class="table-wrap">
-						<table>
-							<caption class="hide-item">리스트</caption>
-							<colgroup>
-								<col width="160px"/>
-								<col width="160px"/>
-								<col width="482px"/>
-								<col width="120px"/>
-								<col width="96px"/>
-								<col width="96px"/>
-								<col width="100px"/>
-								<col width="100px"/>
-								<col width="100px"/>
-							</colgroup>
-							<thead>
-								<tr>
-									<th>Brand</th>
-									<th>EDP No.</th>
-									<th>Description</th>
-									<th>Dimension</th>
-									<th>Stock</th>
-									<th>Unit</th>
-									<th>~ 14 Day</th>
-									<th>~ 30 Day</th>
-									<th>~ 60 Day</th>
-								</tr>
-								<tr></tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>NEUTRAL</td>
-									<td>CDRA04020</td>
-									<td>MULTI-1 DRILL JOBBER(TIALN)</td>
-									<td>2X3X24X56</td>
-									<td class="red-emphasis">2</td>
-									<td>PC</td>
-									<td>0</td>
-									<td>0</td>
-									<td>0</td>
-								</tr>
-								<tr>
-									<td>NEUTRAL</td>
-									<td>CDRA04020</td>
-									<td>MULTI-1 DRILL JOBBER(TIALN)</td>
-									<td>2X3X24X56</td>
-									<td>19</td>
-									<td>PC</td>
-									<td>0</td>
-									<td>0</td>
-									<td>0</td>
-								</tr>
-								<tr>
-									<td>NEUTRAL</td>
-									<td>CDRA04020</td>
-									<td>MULTI-1 DRILL JOBBER(TIALN)</td>
-									<td>2X3X24X56</td>
-									<td class="red-emphasis">1</td>
-									<td>PC</td>
-									<td>0</td>
-									<td>0</td>
-									<td>0</td>
-								</tr>
-								<tr>
-									<td>NEUTRAL</td>
-									<td>CDRA04020</td>
-									<td>MULTI-1 DRILL JOBBER(TIALN)</td>
-									<td>2X3X24X56</td>
-									<td>19</td>
-									<td>PC</td>
-									<td>0</td>
-									<td>0</td>
-									<td>0</td>
-								</tr>
-								<tr>
-									<td>NEUTRAL</td>
-									<td>CDRA04020</td>
-									<td>MULTI-1 DRILL JOBBER(TIALN)</td>
-									<td>2X3X24X56</td>
-									<td>19</td>
-									<td>PC</td>
-									<td>0</td>
-									<td>0</td>
-									<td>0</td>
-								</tr>
-								<tr>
-									<td>NEUTRAL</td>
-									<td>CDRA04020</td>
-									<td>MULTI-1 DRILL JOBBER(TIALN)</td>
-									<td>2X3X24X56</td>
-									<td>19</td>
-									<td>PC</td>
-									<td>0</td>
-									<td>0</td>
-									<td>0</td>
-								</tr>
-								<tr>
-									<td>NEUTRAL</td>
-									<td>CDRA04020</td>
-									<td>MULTI-1 DRILL JOBBER(TIALN)</td>
-									<td>2X3X24X56</td>
-									<td>19</td>
-									<td>PC</td>
-									<td>0</td>
-									<td>0</td>
-									<td>0</td>
-								</tr>
-								<tr>
-									<td>NEUTRAL</td>
-									<td>CDRA04020</td>
-									<td>MULTI-1 DRILL JOBBER(TIALN)</td>
-									<td>2X3X24X56</td>
-									<td>19</td>
-									<td>PC</td>
-									<td>0</td>
-									<td>0</td>
-									<td>0</td>
-								</tr>
-								<tr>
-									<td>NEUTRAL</td>
-									<td>CDRA04020</td>
-									<td>MULTI-1 DRILL JOBBER(TIALN)</td>
-									<td>2X3X24X56</td>
-									<td>19</td>
-									<td>PC</td>
-									<td>0</td>
-									<td>0</td>
-									<td>0</td>
-								</tr>
-								<tr>
-									<td>NEUTRAL</td>
-									<td>CDRA04020</td>
-									<td>MULTI-1 DRILL JOBBER(TIALN)</td>
-									<td>2X3X24X56</td>
-									<td>19</td>
-									<td>PC</td>
-									<td>0</td>
-									<td>0</td>
-									<td>0</td>
-								</tr>
-								<tr>
-									<td>NEUTRAL</td>
-									<td>CDRA04020</td>
-									<td>MULTI-1 DRILL JOBBER(TIALN)</td>
-									<td>2X3X24X56</td>
-									<td>19</td>
-									<td>PC</td>
-									<td>0</td>
-									<td>0</td>
-									<td>0</td>
-								</tr>
-								<tr>
-									<td>NEUTRAL</td>
-									<td>CDRA04020</td>
-									<td>MULTI-1 DRILL JOBBER(TIALN)</td>
-									<td>2X3X24X56</td>
-									<td>19</td>
-									<td>PC</td>
-									<td>0</td>
-									<td>0</td>
-									<td>0</td>
-								</tr>
-								<tr>
-									<td>NEUTRAL</td>
-									<td>CDRA04020</td>
-									<td>MULTI-1 DRILL JOBBER(TIALN)</td>
-									<td>2X3X24X56</td>
-									<td>19</td>
-									<td>PC</td>
-									<td>0</td>
-									<td>0</td>
-									<td>0</td>
-								</tr>
-								<tr>
-									<td>NEUTRAL</td>
-									<td>CDRA04020</td>
-									<td>MULTI-1 DRILL JOBBER(TIALN)</td>
-									<td>2X3X24X56</td>
-									<td>19</td>
-									<td>PC</td>
-									<td>0</td>
-									<td>0</td>
-									<td>0</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-					<!-- 데이터가 없는 경우 보여집니다 -->
-					<div class="empty">
-						<div class="inner">
-							<img src="../assets/images/icon/no_result.png" alt="no result">
-							<p>No results found.</p>
-							<p>Please try again with different keywords.</p>
+					<div class="result">
+						<div class="btn-wrap">
+							<button class="stock-btn" type="button" onclick="location.href='../html/upload.html';"><img src="../assets/images/icon/stock_upload.png" alt="stock upload">Stock Upload</button>
+							<a class="excel-btn" href="../assets/file/test.xlsx"><img src="../assets/images/icon/excel_download.png" alt="excel download">Excel Download</a>
+						</div>
+						<!-- 데이터가 존재할 때 출력되는 테이블입니다 -->
+						<div class="table-wrap">
+							<table>
+								<caption class="hide-item">리스트</caption>
+								<colgroup>
+									<col width="160px"/>
+									<col width="160px"/>
+									<col width="482px"/>
+									<col width="120px"/>
+									<col width="96px"/>
+									<col width="96px"/>
+									<col width="100px"/>
+									<col width="100px"/>
+									<col width="100px"/>
+								</colgroup>
+								<thead>
+									<tr>
+										<th>Brand</th>
+										<th>EDP No.</th>
+										<th>Description</th>
+										<th>Dimension</th>
+										<th>Stock</th>
+										<th>Unit</th>
+										<th>~ 14 Day</th>
+										<th>~ 30 Day</th>
+										<th>~ 60 Day</th>
+									</tr>
+									<tr></tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>NEUTRAL</td>
+										<td>CDRA04020</td>
+										<td>MULTI-1 DRILL JOBBER(TIALN)</td>
+										<td>2X3X24X56</td>
+										<td class="red-emphasis">2</td>
+										<td>PC</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>NEUTRAL</td>
+										<td>CDRA04020</td>
+										<td>MULTI-1 DRILL JOBBER(TIALN)</td>
+										<td>2X3X24X56</td>
+										<td>19</td>
+										<td>PC</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>NEUTRAL</td>
+										<td>CDRA04020</td>
+										<td>MULTI-1 DRILL JOBBER(TIALN)</td>
+										<td>2X3X24X56</td>
+										<td class="red-emphasis">1</td>
+										<td>PC</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>NEUTRAL</td>
+										<td>CDRA04020</td>
+										<td>MULTI-1 DRILL JOBBER(TIALN)</td>
+										<td>2X3X24X56</td>
+										<td>19</td>
+										<td>PC</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>NEUTRAL</td>
+										<td>CDRA04020</td>
+										<td>MULTI-1 DRILL JOBBER(TIALN)</td>
+										<td>2X3X24X56</td>
+										<td>19</td>
+										<td>PC</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>NEUTRAL</td>
+										<td>CDRA04020</td>
+										<td>MULTI-1 DRILL JOBBER(TIALN)</td>
+										<td>2X3X24X56</td>
+										<td>19</td>
+										<td>PC</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>NEUTRAL</td>
+										<td>CDRA04020</td>
+										<td>MULTI-1 DRILL JOBBER(TIALN)</td>
+										<td>2X3X24X56</td>
+										<td>19</td>
+										<td>PC</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>NEUTRAL</td>
+										<td>CDRA04020</td>
+										<td>MULTI-1 DRILL JOBBER(TIALN)</td>
+										<td>2X3X24X56</td>
+										<td>19</td>
+										<td>PC</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>NEUTRAL</td>
+										<td>CDRA04020</td>
+										<td>MULTI-1 DRILL JOBBER(TIALN)</td>
+										<td>2X3X24X56</td>
+										<td>19</td>
+										<td>PC</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>NEUTRAL</td>
+										<td>CDRA04020</td>
+										<td>MULTI-1 DRILL JOBBER(TIALN)</td>
+										<td>2X3X24X56</td>
+										<td>19</td>
+										<td>PC</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>NEUTRAL</td>
+										<td>CDRA04020</td>
+										<td>MULTI-1 DRILL JOBBER(TIALN)</td>
+										<td>2X3X24X56</td>
+										<td>19</td>
+										<td>PC</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>NEUTRAL</td>
+										<td>CDRA04020</td>
+										<td>MULTI-1 DRILL JOBBER(TIALN)</td>
+										<td>2X3X24X56</td>
+										<td>19</td>
+										<td>PC</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>NEUTRAL</td>
+										<td>CDRA04020</td>
+										<td>MULTI-1 DRILL JOBBER(TIALN)</td>
+										<td>2X3X24X56</td>
+										<td>19</td>
+										<td>PC</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>NEUTRAL</td>
+										<td>CDRA04020</td>
+										<td>MULTI-1 DRILL JOBBER(TIALN)</td>
+										<td>2X3X24X56</td>
+										<td>19</td>
+										<td>PC</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!-- 데이터가 없는 경우 보여집니다 -->
+						<div class="empty">
+							<div class="inner">
+								<img src="../assets/images/icon/no_result.png" alt="no result">
+								<p>No results found.</p>
+								<p>Please try again with different keywords.</p>
+							</div>
 						</div>
 					</div>
 				</div>
-            </div>
-        </section>
+			</section>
+		</div>
         <div id="footer"></div>
     </div>
 </body>
