@@ -5,32 +5,32 @@
         </a>
     </div>
     <div class="btn-wrap">
-        <a id="changePw" href="javascript:void(0)"><img src="../../assets/images/icon/locked_bk.png" alt="자물쇠 아이콘">Change Password</a>
+        <a id="changePwBtn" href="javascript:void(0)"><img src="../../assets/images/icon/locked_bk.png" alt="자물쇠 아이콘">Change Password</a>
         <div class="modal-wrap">
             <div class="modal">
                 <strong>Password Modify</strong>
                 <form>
                     <div>
-                        <label>Current Password</label>
+                        <label for="currentPw">Current Password</label>
                         <p class="input-wrap">
-                            <input class="default-show" type="text"/>
+                            <input id="currentPw" class="default-show" type="text"/>
                             <img class="show-eye" src="../../assets/images/icon/show_eye.png" alt="show eye">
                             <img class="hide-eye" src="../../assets/images/icon/hide_eye.png" alt="hide eye">
                             <span>* Not current Password.</span>
                         </p>
                     </div>
                     <div>
-                        <label>Change Password</label>
+                        <label for="changePw">Change Password</label>
                         <p class="input-wrap">
-                            <input class="default-show" type="text"/>
+                            <input id="changePw" class="default-show" type="text"/>
                             <img class="show-eye" src="../../assets/images/icon/show_eye.png" alt="show eye">
                             <img class="hide-eye" src="../../assets/images/icon/hide_eye.png" alt="hide eye">
                         </p>
                     </div>
                     <div>
-                        <label>Confirm Password</label>
+                        <label for="confirmPw">Confirm Password</label>
                         <p class="input-wrap">
-                            <input class="default-hide" type="password"/>
+                            <input id="confirmPw" class="default-hide" type="password"/>
                             <img class="show-eye" src="../../assets/images/icon/show_eye.png" alt="show eye">
                             <img class="hide-eye" src="../../assets/images/icon/hide_eye.png" alt="hide eye">
                             <span>* Password you entered do not match.</span>

@@ -15,7 +15,7 @@ $(document).ready(function () {
 // 로그인 페이지를 제외한 공통 헤더 푸터 INCLUDE & Change Password 모달
     $("#header").not("#container #header").load("../../html/include/header.html", function () {
         $('.modal-wrap').hide();
-        $('#changePw').click(function () {
+        $('#changePwBtn').click(function () {
             var modalWrap = $(this).next('.modal-wrap');
             if (modalWrap.is(":hidden")) {
                 modalWrap.show();

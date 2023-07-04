@@ -1047,7 +1047,9 @@ body * {
   line-height: 2.4rem;
 }
 #upContainer #main .main-inner .upload-box {
-  width: 100%;
+  width: calc(100% - 2rem);
+  max-width: 70.8rem;
+  margin: 0 auto;
   height: 42.2rem;
   display: flex;
   flex-direction: column;
@@ -1065,6 +1067,9 @@ body * {
 }
 #upContainer #main .main-inner .upload-box p:nth-of-type(2) {
   font-size: 1.6rem;
+}
+#upContainer #main .main-inner .upload-box form {
+  width: 100%;
 }
 #upContainer #main .main-inner .upload-box form .fill-up-btn {
   width: 12rem;
@@ -1093,7 +1098,7 @@ body * {
   align-items: flex-end;
 }
 #upContainer #main .main-inner .upload-box form p .upload-name {
-  width: 70.8rem;
+  width: 100%;
   height: 4.2rem;
   padding: 0 1.6rem;
   border-radius: 0.8rem;

@@ -260,7 +260,6 @@
 //서브페이지
 #subContainer {
     width: 100%;
-    // min-width: 1440px;
     background: url(../images/common/sub_bg.png) no-repeat right top/cover;
     overflow: auto;
     #main {
@@ -644,7 +643,6 @@
 // 업로드페이지
 #upContainer {
     width: 100%;
-    // min-width: 1440px;
     background: url(../images/common/sub_bg.png) no-repeat right top/cover;
     overflow: auto;
     #main {
@@ -686,7 +684,10 @@
                 }
             }
             .upload-box {
-                width: 100%;
+                // width: 100%;
+                width: calc(100% - 2rem);
+                max-width: 70.8rem;
+                margin: 0 auto;
                 height: 42.2rem;
                 // min-height: 64.6rem;
                 @include flexbox(column, flex-end, center);
@@ -706,6 +707,7 @@
                     }
                 }
                 form {
+                    width: 100%;
                     .fill-up-btn {
                         width: 12rem;
                         height: 3.2rem;
@@ -726,7 +728,8 @@
                         position: relative;
                         @include flexbox(column, center, flex-end);
                         .upload-name {
-                            width: 70.8rem;
+                            // width: 70.8rem;
+                            width: 100%;
                             height: 4.2rem;
                             padding: 0 1.6rem;
                             border-radius: 0.8rem;
