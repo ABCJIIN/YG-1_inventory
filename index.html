@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>global_inventory login</title>
+    <link rel="icon" href="/assets/images/favicon.ico">
     <!-- jquery cdn -->
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <!-- 로컬 소스 -->
@@ -21,7 +22,7 @@
                 </a>
             </div>
         </div>
-        <div id="main">
+        <section id="main">
             <div class="main-inner">
                 <div class="btn-wrap">
                     <button id="loginBtn" class="on" type="button"><img src="assets/images/icon/locked_red.png" alt="자물쇠 아이콘">LOGIN</button>
@@ -78,25 +79,11 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
         <div id="footer">
             <p id="copyright">COPYRIGHT (C) 2023 <a href="/">YG1</a>. All RIGHT RESERVED.</p>
         </div>
         </div>
     </div>
-    <script>
-        $('#loginBtn').click(function() {
-            $('#support').hide();
-            $('#login').show();
-            $('#loginBtn').addClass('on');
-            $('#supportBtn').removeClass('on');
-        });
-        $('#supportBtn').click(function() {
-            $('#login').hide();
-            $('#support').show();
-            $('#supportBtn').addClass('on');
-            $('#loginBtn').removeClass('on');
-        });
-    </script>
 </body>
 </html>

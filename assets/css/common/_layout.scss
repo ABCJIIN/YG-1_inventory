@@ -23,7 +23,7 @@
             }
             .btn-wrap {
                 @include flexbox(row, flex-start, center);
-                gap: 2.4rem;
+                gap: 1.4rem;
                 a {
                     @include flexbox(row, center, center);
                     gap: 0.4rem;
@@ -35,6 +35,12 @@
                         font-size: 1.4rem;
                         line-height: 2rem;
                         color: #757575;
+                        padding: 0 1rem 0 0.5rem;
+                        transition: all 0.3s;
+                        &:hover {
+                            background: #e4e4e4;
+                            transition: all 0.3s;
+                        }
                     }
                     &:last-child {
                         width: 12rem;
